@@ -116,14 +116,12 @@ img{
         position: absolute;
         right: 3em;
         margin-top: -3em;
-        background-color: var(--color2);
-        border: none;
-        border-radius: 5px;
+        border: var(--color3) solid 2px;
         cursor: pointer;
         padding-inline: 0.5em;
 
         a{
-            color: white;
+            color: var(--color3);
             text-decoration: none;
         }
     }

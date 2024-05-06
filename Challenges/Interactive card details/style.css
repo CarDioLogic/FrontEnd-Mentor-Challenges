@@ -1,0 +1,176 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap');
+
+:root{
+--Lineargradient: hsl(249, 99%, 64%) to hsl(278, 94%, 30%);
+--Red: hsl(0, 100%, 66%);
+--White: hsl(0, 0%, 100%);
+--Lightgrayishviolet: hsl(270, 3%, 87%);
+--Darkgrayishviolet: hsl(279, 6%, 55%);
+--violet: hsl(278, 94%, 30%);
+--Verydarkviolet: hsl(278, 68%, 11%);
+}
+
+body{
+    margin: 0;
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 18px;
+}
+
+span{ /* used for errors */
+    color: var(--Red);
+    font-size: 0.8rem;
+    font-style: italic;
+}
+
+.layout{
+    display:block;
+}
+
+.cardContainer{
+    background-image: url(images/bg-main-mobile.png);
+    background-color: var(--Lineargradient);
+    height: 230px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.card{
+    position: absolute;
+    width: 300px;
+}
+.cardFront{
+    top: 7em;
+    left: 1.2em
+}
+.cardBack{
+    top: 1em;
+    left: 3.5em;
+}
+.cardLogo{
+    position: absolute;
+    width: 4em;
+    top: 8em;
+    left: 2.5em;
+}
+.cardDetails{
+    font-size: 1rem;
+    position: absolute;
+    color:white;
+    top: 13.5em;
+    left: 2.5em;
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+
+    p{
+        margin-block:0.2em;
+    }
+}
+.cardDetails > div {
+display: flex;
+justify-content: space-between;
+}
+.cardDetails .cardName:nth-child(2) {
+margin-right: auto;
+}
+.cardNumber{
+    font-size: 1.2rem;
+    word-spacing: 0.5em;
+}
+
+.form{
+    margin-top: 5em;
+    padding:1em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap:1em;
+    color: var(--Darkgrayishviolet);
+    font-weight: bolder;
+}
+
+.center{
+    text-align: center;
+}
+
+.inputGroup{
+    display: flex;
+    flex-direction: column;
+    gap:0.2em;
+}
+.label{
+    text-transform: uppercase;
+    font-size: 0.6em;
+    margin-bottom: 0.3em;
+}
+.input{
+    padding: 0.5em;
+    border-radius: 5px;
+    border: 1px solid var(--Lightgrayishviolet);
+}
+.inputError{
+    border: 1px solid var(--Red);
+    color: var(--Red);
+    caret-color: black;
+}
+.input::placeholder {
+    color: var(--Lightgrayishviolet)
+}
+.ccDetails{
+    display: flex;
+    gap:1em;
+}
+.dateInput{
+    width:50%;
+}
+.dateInputField{
+    display: flex;
+    gap:1em;
+
+    input{
+        width: 50%;
+    }
+}
+.formButton{
+    background-color: var(--Verydarkviolet);
+    color: white;
+    border-radius: 5px;
+    padding-block: 1em;
+}
+
+.hide{
+    display: none;
+}
+
+@media (min-width: 400px){
+    .layout{
+        display:flex;
+        flex-direction: row;
+    }
+    .cardContainer{
+        min-width: 300px;
+        height: 100vh;
+    }
+
+    .cardFront{
+        top: 7em;
+        left: 6em;
+    }
+    .cardBack{
+        top: 17em;
+        left: 8em;
+    }
+    .cardLogo{
+        top: 8em;
+        left: 7em;
+    }
+    .cardDetails{
+        top: 13.5em;
+        left: 7.5em;
+        width: 17em;
+    }
+
+    .form{
+        padding-inline: 14em;
+    }
+}
