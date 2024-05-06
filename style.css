@@ -94,7 +94,6 @@ img{
     justify-content: center;
     flex-wrap: wrap;
     gap: 2em;
-
     margin-top:1em;
 }
 
@@ -127,3 +126,38 @@ img{
     }
 }
 
+@media (max-width:400px){
+    .logo{
+        margin-top: -9em;
+        margin-bottom: 4em;
+    
+        h2{
+            text-align: center;
+        }
+    }
+
+    .container{
+        margin-inline: 1em;
+        margin-block: 0.5em;
+    }
+    .row{
+        flex-direction: column;
+    }
+
+    .logoDecorationBox{
+        width: 3.5em;
+        height: 10em;
+        margin: 0em auto;
+    }
+
+    .descriptionImage{
+        order: 0;
+    }
+    .descriptionContainer{
+        order: 1;
+        margin-block: 1em;
+    }
+    .challenge{
+        width: 80%;
+    }
+}
