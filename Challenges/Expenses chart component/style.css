@@ -1,0 +1,140 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
+
+:root{
+--Softred: hsl(10, 79%, 65%);
+--Cyan: hsl(186, 34%, 60%);
+--LightCyan: hsl(186, 34%, 75%);
+--Darkbrown: hsl(25, 47%, 15%);
+--Mediumbrown: hsl(28, 10%, 53%);
+--Cream: hsl(27, 66%, 92%);
+--Verypaleorange: hsl(33, 100%, 98%);
+}
+
+body{
+    font-family: "DM Sans", sans-serif;
+    font-size: 18px;
+    margin: 0;
+    background-color: var(--Cream);
+    padding-inline: 1em;
+    padding-block: 3em;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+p, h2{
+    margin: 0;
+}
+
+.chart{
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    height: 150px;
+    overflow-y: hidden;
+    padding-top: 1.5em;
+}
+
+.loading-bar {
+    width: 100%;
+    border-radius: 5px;
+    background-color:  var(--Softred);
+    animation: fill-progress 2s ease forwards;
+    transform-origin: bottom;
+    transition: 200ms ease-in;
+}
+.loading-bar:hover {
+    background-color:  var(--Cream);
+}
+
+.maxDayBar{
+    background-color:  var(--Cyan);
+}
+.maxDayBar:hover{
+    background-color:  var(--LightCyan);
+}
+
+.column{
+   width:12%;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+}
+
+.valueBox{
+    background-color: var(--Darkbrown);
+    color: white;
+    border-radius: 5px;
+    padding: 0.2em;
+    margin-bottom: 0.2em;
+    position: relative;
+    z-index: 9999;
+}
+
+.hide{
+    display: none;
+}
+
+@keyframes fill-progress {
+    from {
+        transform: scaleY(0);
+    }
+    to {
+        transform: scaleY(1);
+    }
+}
+
+.balanceBox{
+    display: flex;
+    align-items: center;
+    background-color: var(--Softred);
+    border-radius: 5px;
+    margin-bottom: 1em;
+    color: white;
+    padding: 1.5em;
+
+    >div p{
+        margin-bottom: 0.5em;
+    }
+}
+
+.logo{
+    margin-left: auto;
+}
+
+.content{
+    background-color: white;
+    border-radius: 5px;
+    padding: 1em;
+
+    >h2{
+        font-size: 1.4rem;
+    }
+}
+
+hr{
+    margin-block: 1.5em;
+}
+
+.container-expenses{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.container-weeklyVariation{
+    text-align: end;
+}
+
+.--minorDescription{
+    font-size: 0.8rem;
+    color:var(--Mediumbrown)
+}
+
+@media (min-width: 400px){
+    main{
+        margin: 0 auto;
+        width: 400px;
+    }
+}
+

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="style.css">  
+  <title>Frontend Mentor | Expenses chart component</title>
+
+
+</head>
+<body>
+
+  <main>
+    <div class="balanceBox">
+      <div>
+        <p>My balance</p>
+        <h2 id="balance">$921.48</h2>
+      </div>
+      <div class="logo">
+        <img src="images/logo.svg" alt="">
+      </div>
+    </div>
+  
+  
+    <div class="content">
+      <h2>Spending - Last 7 days</h2>
+      <div class="chart" id="chart">
+      </div>
+      <hr>
+  
+      <div class="container-expenses">
+        <div class="container-weeklyExpenses">
+          <p class="--minorDescription">Total this week</p>
+          <h2 id="weeklyExpenses">$478.33</h2>
+        </div>
+        <div class="container-weeklyVariation">
+          <p id="weeklyVariation">+2.4%</p>
+          <p class="--minorDescription">from last week</p>
+        </div>
+      </div>
+    </div>
+  
+  </main>
+ 
+
+
+<!-- 
+
+  
+
+  mon
+  tue
+  wed
+  thu
+  fri
+  sat
+  sun
+
+  Total this month
+  $478.33
+
+  +2.4%
+  from last month -->
+  
+<script src="script.js"></script>
+</body>
+</html>
