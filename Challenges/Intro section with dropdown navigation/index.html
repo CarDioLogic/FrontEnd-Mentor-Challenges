@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <link rel="stylesheet" href="style.css">
+  <title>Frontend Mentor | Intro section with dropdown navigation</title>
+
+</head>
+<body>
+
+  <div class="content">
+    <div class="logoContainer">
+      <img src="images/logo.svg" alt="Logo image">
+    </div>
+
+    <div class="mainContent">
+      <div class="mainImgContainer">
+        <img class="imageHeading" src="images/image-hero-mobile.png"  alt="image-hero-mobile">
+      </div>
+    
+      <div class="textContainer">
+        <div>
+          <h1 class="textTitle">Make remote work</h1>
+          <p class="textContent">Get your team in sync, no matter your location. Streamline processes, 
+            create team rituals, and watch productivity soar.</p>
+          <button class="textButton">Learn more</button>
+        </div>
+        <div class="companiesContainer">
+          <img src="images/client-databiz.svg" alt="">
+          <img src="images/client-audiophile.svg" alt="">
+          <img src="images/client-meet.svg" alt="">
+          <img src="images/client-maker.svg" alt="">
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+<!-- NavBar -->
+  <div class="navbar">
+    <div class="links" id="links" aria-expanded="false">
+      <div class="subMenuItem" id="features">
+        <a class="link" id="features" aria-expanded="false">Features</a>
+        <img class="arrow icon" id="arrow" src="images/icon-arrow-up.svg" alt="">
+      </div>
+
+      
+      <div class="subMenu" id="subMenuFeatures">
+        <div class="subMenuItem">
+          <img class="icon" src="images/icon-todo.svg" alt="">
+          <a href="">Todo List</a>
+        </div>
+        <div class="subMenuItem">
+          <img class="icon" src="images/icon-calendar.svg" alt="">
+          <a href="">Calendar</a>
+        </div>
+        <div class="subMenuItem">
+          <img class="icon" src="images/icon-reminders.svg" alt="">
+          <a href="">Reminders</a>
+        </div>
+        <div class="subMenuItem">
+          <img class="icon" src="images/icon-planning.svg" alt="">
+          <a href="">Planning</a>
+        </div>
+      </div>
+  
+      <div class="subMenuItem" id="company">
+        <a class="link" id="company" aria-expanded="false">Company</a>
+        <img class="arrow icon" id="arrow" src="images/icon-arrow-up.svg" alt="">
+      </div>
+      <div class="subMenu" id="subMenuCompany">
+        <div class="subMenuItem">
+          <a href="">History</a>
+        </div>
+        <div class="subMenuItem">
+          <a href="">Our Team</a>
+        </div>
+        <div class="subMenuItem">
+          <a href="">Blog</a>
+        </div>
+      </div>
+      
+      <div class="subMenuItem">
+        <a href="" class="link">Careers</a>
+      </div>
+      <div class="subMenuItem">
+        <a href="" class="link">About</a>
+      </div>
+
+
+  
+      <div class="buttonsContainer">
+        <button class="loginBtn">Login</button>
+        <button class="registerBtn">Register</button>
+      </div>
+    </div>
+  
+    <div class="nav-toggle" id="nav-toggle">
+      <div class="hamburger" id="hamburger"></div>
+    </div>
+
+  </div>
+
+
+<script src="script.js"></script>
+</body>
+</html>

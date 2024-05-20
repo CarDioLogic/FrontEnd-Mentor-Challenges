@@ -20,7 +20,7 @@ fetch('data.json')
 
         let bar = document.createElement('div');
         bar.classList.add('loading-bar');
-        if(element.day == maxDay){
+        if(element.day == 'Mar'){
             bar.classList.add('maxDayBar');
         }
 

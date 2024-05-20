@@ -1,8 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
 
 :root{
---Softred: hsl(10, 79%, 65%);
---Cyan: hsl(186, 34%, 60%);
+--Softred: #89D1E0;
+--Cyan: hsl(10, 79%, 65%);
 --LightCyan: hsl(186, 34%, 75%);
 --Darkbrown: hsl(25, 47%, 15%);
 --Mediumbrown: hsl(28, 10%, 53%);
@@ -28,7 +28,8 @@ p, h2{
 .chart{
     display: flex;
     align-items: flex-end;
-    justify-content: space-between;
+    justify-content: center;
+    gap: 1em;
     height: 150px;
     overflow-y: hidden;
     padding-top: 1.5em;
