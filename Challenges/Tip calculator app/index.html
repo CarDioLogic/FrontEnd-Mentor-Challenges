@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="style.css">
+  <title>Frontend Mentor | Tip calculator app</title>
+
+
+</head>
+<body>
+
+  <div class="title">
+    <h2>SPLI</h2>
+    <h2>TTER</h2>
+  </div>
+
+  <div class="container">
+    <div class="userInterface">
+      <div class="inputContainer">
+        <div class="inputLabels">
+          <label class="--smallText" for="bill">Bill</label>
+          <span class="error" id="errorBill"></span>
+        </div>
+        <img src="images/icon-dollar.svg" class="icon --dollarIcon" alt="">
+        <input type="text" class="calculatorInput" id="bill">
+      </div>
+
+      <div class="tipSection">
+        <p class="--smallText">Select Tip %</p>
+        <div class="tipBtnsContainer">
+          <button class="calculatorBtn" value="5">5%</button>
+          <button class="calculatorBtn" value="10">10%</button>
+          <button class="calculatorBtn" value="15">15%</button>
+          <button class="calculatorBtn" value="25">25%</button>
+          <button class="calculatorBtn"  value="50">50%</button>
+          <input class="calculatorInput" id="customTip" placeholder="Custom">
+        </div>
+      </div>
+
+      <div class="inputContainer">
+        <div class="inputLabels">
+          <label class="--smallText" for="bill">Number of people</label>
+          <span class="error" id="errorNbrPeople"></span>
+        </div>
+        <img src="images/icon-person.svg" class="icon --personIcon" alt="">
+        <input type="text" class="calculatorInput" id="nbrPeople">
+      </div>
+
+    </div>
+
+
+    <div class="resultScreen">
+      <div class="resultContainer">
+        <div class="resultText">
+          <h5 class="--smallText --whiteColor">Tip Amount</h5>
+          <p>/ Person</p>
+        </div>
+        <h1 class="result" id="tipResult">$0.00</h1>
+      </div>
+
+      <div class="resultContainer">
+        <div class="resultText">
+          <h5 class="--smallText --whiteColor">Total</h5>
+          <p>/ Person</p>
+        </div>
+        <h1 class="result" id="totalResult">$0.00</h1>
+      </div>
+
+      <button class="resetBtn" id="resetBtn">RESET</button>
+    </div>
+  </div>
+  
+</body>
+<script src="script.js"></script>
+</html>
