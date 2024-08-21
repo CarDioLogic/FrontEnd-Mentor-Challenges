@@ -1,0 +1,37 @@
+[
+    {
+        "title": "Age calculator app",
+        "imageSrc": "images/imgChallenges/age calculator app img.PNG",
+        "url": "Challenges/Age calculator app/index.html"
+    },
+    {
+        "title": "Interactive card details",
+        "imageSrc": "images/imgChallenges/interactive card details.PNG",
+        "url": "Challenges/Interactive card details/index.html"
+    },
+    {
+        "title": "Expenses chart",
+        "imageSrc": "images/imgChallenges/expenses chart component.PNG",
+        "url": "Challenges/Expenses chart component/index.html"
+    },
+    {
+        "title": "Intro section with dropdown navigation",
+        "imageSrc": "images/imgChallenges/intro section with dropdown navigation.PNG",
+        "url": "Challenges/Intro section with dropdown navigation/"
+    },
+    {
+        "title": "Advice generator app",
+        "imageSrc": "images/imgChallenges/advice generator app.PNG",
+        "url": "Challenges/Advice generator app/"
+    },
+    {
+        "title": "Time tracking dashboard",
+        "imageSrc": "images/imgChallenges/Time tracking dashboard.PNG",
+        "url": "Challenges/Time tracking dashboard/"
+    },
+    {
+        "title": "Tip calculator app",
+        "imageSrc": "images/imgChallenges/Tip calculator app.PNG",
+        "url": "Challenges/Tip calculator app/"
+    }
+]

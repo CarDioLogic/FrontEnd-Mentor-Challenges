@@ -1,164 +1,124 @@
-:root{
-    --color1: rgba(231, 235, 243, 0.979);
-    --color2: rgba(31, 56, 107, 0.979);
-    --color3: rgba(103, 141, 217, 0.979);
+:root {
+  --color1: #f5faff;
+  --color2: #28262c;
+  --color3: #a8a4af;
+  --color4: #91B3FA;
+  --color5: #1a0f91;
 }
 
-/* html{
-    background-color: var(--color2);
-} */
-body{
- margin: 0;
- font-family: sans-serif;
- margin:0 auto;
-/*  max-width: 1000px;
- height: 100vh; */
- background-color: white;
-}
-img{
-    max-width: 100%;
-    aspect-ratio: 1.7;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
 }
 
-.row{
-    display: flex;
-    align-items: center;
+body {
+  margin: 0;
+  font-family: sans-serif;
+  margin: 0 auto;
+  background-color: var(--color1);
 }
 
-.container{
-    margin-inline: 5em;
-    margin-block: 0.5em;
+main {
+  margin-top: 2em;
+}
+img {
+  max-width: 100%;
+}
+a:visited {
+  color: var(--color4);
+}
+a:active {
+  color: var(--color5);
+}
+.container {
+  padding-inline: 5em;
+  padding-block: 0.5em;
+}
+.challengeImg {
+  aspect-ratio: 1.7;
+}
+.titleContainer {
+  text-align: center;
+  color: var(--color2);
+}
+.title {
+  text-transform: uppercase;
+}
+.row {
+  display: flex;
+  align-items: center;
+}
+.descriptionTxt {
+  font-size: 0.9em;
+  color: var(--color2);
 }
 
-.logo{
-    color: var(--color2);
-    flex-direction: column;
-    margin-top: -6.5em;
-    margin-bottom: 4em;
-
-    h2{
-        text-align: center;
-    }
+.challengesSection {
+  margin-top: 2em;
+  background-color: var(--color4);
 }
 
-.logo:hover{
-    cursor: pointer;
-    text-decoration: underline;
-}
-.logoText{
-    padding-top: 0.5em;
-    background-color: white;
-    text-transform: uppercase;
-    margin: 0;
+.challengesContainer {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2em;
+  margin-top: 1em;
 }
 
-.logoImg{
-    border: solid 2px  var(--color2);
-    border-radius: 50%;
-}
-.logoDecorationBox{
-    border: solid 2px var(--color2);
-    width: 3.5em;
-    height: 7em;
-    margin: 0em auto;
-}
+.challenge {
+  background-color: var(--color1);
+  border-radius: 1em;
+  padding: 1em;
+  width: 40%;
+  position: relative;
 
-.descriptionContainer{
-
-    margin-right: 0.5em;
-    border-top: var(--color2) solid 2px;
-    border-bottom: var(--color2) solid 2px;
-
-    h2{
-        color: var(--color2);
-    }
-    p a{
-        color: var(--color2);
-    }
-}
-
-.challengesSection{
-    margin-top: 2em;
-    border-top: var(--color2) solid 2px;
-    display: flex;
-
-    h2{
-        margin-top: -0.7em;
-        padding-right: 1em;
-        background-color: white;
-        color: var(--color2);
-    }
-}
-
-.challengesContainer{
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 2em;
-    margin-top:1em;
-}
-
-.challenge{
+  img {
     border: var(--color2) solid 2px;
-    padding: 1em;
-    width: 40%;
-    position: relative;
-
-    img{
-        border: var(--color2) solid 2px;
-    }
-    h3{
-        margin-top: 0;
-        margin-bottom: 0.5em;
-    }
-    /* this was the only way i found to get the button to the end of the container */
-    button{
-        position: absolute;
-        right: 3em;
-        margin-top: -3em;
-        border: var(--color3) solid 2px;
-        cursor: pointer;
-        padding-inline: 0.5em;
-
-        a{
-            color: var(--color3);
-            text-decoration: none;
-        }
-    }
+  }
+  h3 {
+    margin-top: 0;
+    margin-bottom: 0.5em;
+  }
+  button {
+    position: absolute;
+    right: 3em;
+    margin-top: -3em;
+    border: var(--color4) solid 2px;
+    border-radius: 0.5em;
+    cursor: pointer;
+    padding-inline: 0.5em;
+  }
 }
 
-@media (max-width:400px){
-    .logo{
-        margin-top: -9em;
-        margin-bottom: 4em;
-    
-        h2{
-            text-align: center;
-        }
-    }
+@media (max-width: 400px) {
+  .container {
+    margin-inline: 1em;
+    margin-block: 0.5em;
+  }
+  .row {
+    flex-direction: column;
+  }
 
-    .container{
-        margin-inline: 1em;
-        margin-block: 0.5em;
-    }
-    .row{
-        flex-direction: column;
-    }
+  .logoDecorationBox {
+    width: 3.5em;
+    height: 10em;
+    margin: 0em auto;
+  }
 
-    .logoDecorationBox{
-        width: 3.5em;
-        height: 10em;
-        margin: 0em auto;
-    }
-
-    .descriptionImage{
-        order: 0;
-    }
-    .descriptionContainer{
-        order: 1;
-        margin-block: 1em;
-    }
-    .challenge{
-        width: 80%;
-    }
+  .descriptionImage {
+    order: 0;
+  }
+  .descriptionContainer {
+    order: 1;
+    margin-block: 1em;
+  }
+  .challenge {
+    width: 80%;
+  }
 }

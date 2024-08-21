@@ -184,7 +184,9 @@ img{
     width: 2em;
     height: 3px;
     background: black;
-    transition: all ease-in-out 250ms; }
+    transition: all ease-in-out 250ms;
+  
+}
   
   .hamburger::before {
     transform: translateY(-6px); }
