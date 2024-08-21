@@ -9,6 +9,7 @@ This repository contains in an organized manner my solutions to some of the chal
 
 ## Usage
 - From the homepage you can navigate to any of the challenges and visualize the final result
+- [Visit](https://cardiologic.github.io/FrontEnd-Mentor-Challenges/)
 
 ## Author:
 - [João Silva](https://github.com/CarDioLogic)
