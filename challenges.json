@@ -33,5 +33,10 @@
         "title": "Tip calculator app",
         "imageSrc": "images/imgChallenges/Tip calculator app.PNG",
         "url": "Challenges/Tip calculator app/"
+    },
+    {
+        "title": "Bloqr landing page",
+        "imageSrc": "images/imgChallenges/BlogrLandingPage.PNG",
+        "url": "Challenges/blogr landing page/"
     }
 ]

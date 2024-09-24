@@ -11,7 +11,6 @@ hambuguerBtn.addEventListener('click', () => {
     document.querySelector('.content').classList.toggle('is-open');
     hambuguerBtn.classList.toggle('is-open');
     linksNav.classList.toggle('is-open');
-
 });
 
 
