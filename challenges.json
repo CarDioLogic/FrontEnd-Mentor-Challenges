@@ -38,5 +38,11 @@
         "title": "Bloqr landing page",
         "imageSrc": "images/imgChallenges/BlogrLandingPage.PNG",
         "url": "Challenges/blogr landing page/"
+    },
+    {
+        "title": "Crowdfunding product page",
+        "imageSrc": "images/imgChallenges/CrowdfundingProductPage.JPG",
+        "url": "Challenges/Crowdfunding product page/"
     }
+
 ]

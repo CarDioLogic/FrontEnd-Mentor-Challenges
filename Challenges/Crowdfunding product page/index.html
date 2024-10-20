@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="custom-radio-style.css">
+  <script src="script.js" defer></script>
+
+  <title>Frontend Mentor | Crowdfunding product page</title>
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="logo-container">
+        <img src="images/logo.svg" alt="Logo">
+      </div>
+      <div class="hamburguer-container">
+        <div class="hamburguer" id="hamburguer"></div>
+      </div>
+      <div class="nav-links-container" id="nav-links-container">
+        <div class="nav-links">
+          <a href="">About</a>
+          <a href="">Discover</a>
+          <a href="">Get Started</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <div id="modal-container"></div>
+
+    <div class="section section1">
+      <div class="logo-container">
+        <img src="images/logo-mastercraft.svg" alt="logo icon">
+      </div>
+      <div class="section-content">
+        <h2 class="section-title">Mastercraft Bamboo Monitor Riser</h2>
+        <p>A beautiful & handcrafted monitor stand to reduce neck and eye strain.</p>
+        <div class="section-buttons">
+          <button class="btn-style1" id="backThisProject-btn">Back this project</button>
+
+          <div class="bookmark-btn">
+            <img src="images/icon-bookmark.svg" alt="">
+            <p>Bookmark</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section section2">
+      <div class="section-content">
+        <div class="resultsSummary-group">
+          <h2 class="results-title" id="ammountAchieved"></h2>
+          <p class="results-subtitle" id="ammountGoal"></p>
+        </div>
+        <div class="resultsSummary-group">
+          <h2 class="results-title" id="backersAmmount">5,007</h2>
+          <p class="results-subtitle">total backers</p>
+        </div>
+        <div class="resultsSummary-group">
+          <h2 class="results-title" id="daysLeft"></h2>
+          <p class="results-subtitle">days left</p>
+        </div>
+      </div>
+      <div class="loading-container">
+        <div class="loadingBar" id="loadingBar"></div>
+      </div>
+    </div>
+
+    <div class="section rewards-section" id="rewards-section"></div> 
+
+  </main>
+</body>
+</html>
