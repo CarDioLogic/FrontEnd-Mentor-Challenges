@@ -11,9 +11,14 @@
           const title = document.createElement('h3');
           title.textContent = challenge.title;
           challengeDiv.appendChild(title);
+          challengeDiv.title = "Use browser's back button to return to this page!"
           
           const imgContainer = document.createElement('div');
           imgContainer.classList.add('imgContainer');
+
+          challengeDiv.addEventListener('click', function(){
+            window.location.href = challenge.url;
+          });
           
           const img = document.createElement('img');
           img.classList.add('challengeImg');
@@ -22,14 +27,6 @@
           
           imgContainer.appendChild(img);
           challengeDiv.appendChild(imgContainer);
-          
-          const button = document.createElement('button');
-          const link = document.createElement('a');
-          link.href = challenge.url;
-          link.textContent = 'GO';
-          
-          button.appendChild(link);
-          challengeDiv.appendChild(button);
           
           challengesContainer.appendChild(challengeDiv);
         });

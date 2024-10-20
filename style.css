@@ -17,6 +17,7 @@ p {
 }
 
 body {
+  color: var(--color5);
   margin: 0;
   font-family: sans-serif;
   margin: 0 auto;
@@ -24,19 +25,20 @@ body {
 }
 
 main {
-  margin-top: 2em;
+  margin-top: 1em;
 }
 img {
   max-width: 100%;
 }
-a:visited {
-  color: var(--color4);
-}
-a:active {
+
+a:hover{
   color: var(--color5);
 }
+a:active {
+  color: var(--color4);
+}
 .container {
-  padding-inline: 5em;
+  padding-inline: 7em;
   padding-block: 0.5em;
 }
 .challengeImg {
@@ -47,20 +49,27 @@ a:active {
   color: var(--color2);
 }
 .title {
+  color: var(--color5);
   text-transform: uppercase;
+}
+.subtitle{
+  color: var(--color5);
 }
 .row {
   display: flex;
   align-items: center;
 }
 .descriptionTxt {
-  font-size: 0.9em;
+  font-size: 1.3em;
   color: var(--color2);
+  max-width: 600px;
 }
 
 .challengesSection {
-  margin-top: 2em;
-  background-color: var(--color4);
+  margin-top: 1em;
+}
+.challengesSection-title{
+  text-align: center;
 }
 
 .challengesContainer {
@@ -77,10 +86,22 @@ a:active {
   padding: 1em;
   width: 40%;
   position: relative;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
 
-  img {
-    border: var(--color2) solid 2px;
+  .imgContainer{
+    overflow: hidden;
+    border-radius: 1em;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+    img {
+      transition: transform 200ms ease-out;
+    }
+    img:hover{
+      transform: scale(1.1);
+    }
   }
+
   h3 {
     margin-top: 0;
     margin-bottom: 0.5em;
@@ -96,21 +117,21 @@ a:active {
   }
 }
 
-@media (max-width: 400px) {
+@media (max-width: 600px) {
   .container {
     margin-inline: 1em;
     margin-block: 0.5em;
+    padding-inline: 1em;
+    padding-block: 0.5em;
   }
   .row {
     flex-direction: column;
   }
-
   .logoDecorationBox {
     width: 3.5em;
     height: 10em;
     margin: 0em auto;
   }
-
   .descriptionImage {
     order: 0;
   }
