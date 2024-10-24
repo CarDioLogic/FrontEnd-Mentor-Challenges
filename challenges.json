@@ -41,7 +41,7 @@
     },
     {
         "title": "Crowdfunding product page",
-        "imageSrc": "images/imgChallenges/CrowdfundingProductPage.JPG",
+        "imageSrc": "images/imgChallenges/Crowdfunding.jpg",
         "url": "Challenges/Crowdfunding product page/"
     },
     {
@@ -49,5 +49,4 @@
         "imageSrc": "images/imgChallenges/3-collumnPreviewCardComponent.PNG",
         "url": "Challenges/3-column preview card component/"
     }
-
 ]
