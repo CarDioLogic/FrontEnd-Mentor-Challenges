@@ -1,0 +1,127 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Lexend+Deca:wght@100..900&display=swap');
+
+:root{
+    --brightOrange: hsl(31, 77%, 52%);
+    --brightOrangeA: hsl(31, 77%, 80%);
+    --darkCyan: hsl(184, 100%, 22%);
+    --darkCyanA: hsl(184, 100%, 42%);
+    --veryDdarkCyan: hsl(179, 100%, 13%);
+    --veryDdarkCyanA: hsl(179, 100%, 23%);
+    --transparentWhite-paragraphs: hsla(0, 0%, 100%, 0.75);
+    --veryLightGray-background-headings-buttons: hsl(0, 0%, 95%);
+}
+
+html, body{
+    margin-bottom: 0px;
+    font-family: "Lexend Deca", sans-serif;
+    font-size: 15px;
+}
+
+.card{
+    margin: auto;
+    margin-top: 5em;
+    width: 900px;
+    display: flex;
+    border-radius: 10px;
+}
+
+.cardItem:hover{
+    transform: scale(1.2);
+    z-index: 1;
+}
+
+.cardItem--one{
+    --btnColor: var(--brightOrange);
+    --cardBackground: var(--brightOrange);
+    --btnHoverColor: var(--brightOrangeA);
+}
+.cardItem--two{
+    --btnColor: var(--darkCyan);
+    --cardBackground: var(--darkCyan);
+    --btnHoverColor: var(--darkCyanA);
+}
+.cardItem--three{
+    --btnColor: var(--veryDdarkCyan);
+    --cardBackground: var(--veryDdarkCyan);
+    --btnHoverColor: var(--veryDdarkCyanA);
+}
+
+.cardItem{
+    --_btnColor: var(--btnColor, pink);
+    --_btnHoverColor: var(--btnHoverColor, pink);
+    --_cardBackground: var(--cardBackground, red);
+    transition: transform 500ms ease-in-out;
+    position: relative;
+    text-align: start;
+    padding: 2.5em;
+    color: white;
+    background-color: var(--_cardBackground);
+    
+    & h1{
+        text-transform: uppercase;
+    }
+
+    & p{
+        word-spacing: 2px;
+        margin-bottom: 5em;
+        width:90%;
+    }
+}
+
+.cardBtn{
+    color: var(--_btnColor);
+    border-radius: 20px;
+    padding: 0.8rem;
+    padding-inline: 1.4em;
+    border: none;
+    position: relative;
+    z-index: 1;
+    cursor:pointer;
+}
+.cardBtn::after{
+    content: "";
+    position: absolute;
+    border-radius: 20px;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    background-color: var(--_btnHoverColor);
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 250ms ease-in;
+} 
+.cardBtn:hover::after{
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+@media only screen and (max-width: 400px){  
+.card{
+    margin-top: 1em;
+    width: 300px;
+    flex-direction: column;
+}
+
+.cardItem--one{
+    border-radius: 20px 20px 0px 0px;
+}
+.cardItem--three{
+    border-radius: 0px 0px 20px 20px;
+}
+.cardBtn{
+    padding: 0.8rem;
+    padding-inline: 1.4em;
+}
+
+.cardItem{
+    padding: 2em;
+
+    & p{
+        word-spacing: 2px;
+        margin-bottom: 2em;
+        width:90%;
+    }
+}
+}
