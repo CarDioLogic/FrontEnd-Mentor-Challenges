@@ -48,5 +48,10 @@
         "title": "3-collumn card preview",
         "imageSrc": "images/imgChallenges/3-collumnPreviewCardComponent.PNG",
         "url": "Challenges/3-column preview card component/"
+    },
+    {
+        "title": "Ping single column coming soon page",
+        "imageSrc": "images/imgChallenges/pingSingleColumnComingSoonPage.JPG",
+        "url": "Challenges/Ping single column coming soon page/"
     }
 ]
