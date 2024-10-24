@@ -43,6 +43,11 @@
         "title": "Crowdfunding product page",
         "imageSrc": "images/imgChallenges/CrowdfundingProductPage.JPG",
         "url": "Challenges/Crowdfunding product page/"
+    },
+    {
+        "title": "3-collumn card preview",
+        "imageSrc": "images/imgChallenges/3-collumnPreviewCardComponent.PNG",
+        "url": "Challenges/3-column preview card component/"
     }
 
 ]
