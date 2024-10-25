@@ -53,5 +53,10 @@
         "title": "Ping single column coming soon page",
         "imageSrc": "images/imgChallenges/pingSingleColumnComingSoonPage.JPG",
         "url": "Challenges/Ping single column coming soon page/"
+    },
+    {
+        "title": "Four Card Feature Section",
+        "imageSrc": "images/imgChallenges/fourCardFeatureSection.PNG",
+        "url": "Challenges/Four card feature section/"
     }
 ]
