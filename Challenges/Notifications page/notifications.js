@@ -40,9 +40,13 @@ export class Notifications {
       text.classList.add("unreadNotificationContent");
     }
     notification.addEventListener("click", () => {
+    
+    if(notificationData.isRead == false){
+      const nbrNotifications = document.getElementById('nbrNotifications');
+      nbrNotifications.textContent = parseInt(nbrNotifications.textContent) - 1;
+    }
 
-    const nbrNotifications = document.getElementById('nbrNotifications');
-    nbrNotifications.textContent = parseInt(nbrNotifications.textContent) - 1;
+    notificationData.isRead = true;
       //call to function to update read status of notification on db
       notification.classList.remove("unreadNotification");
       text.classList.remove("unreadNotificationContent");
