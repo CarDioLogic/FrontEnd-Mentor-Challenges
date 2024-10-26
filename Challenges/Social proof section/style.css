@@ -1,0 +1,208 @@
+:root {
+  --veryDarkMagenta: hsl(300, 43%, 22%);
+  --softPink: hsl(333, 80%, 67%);
+  --darkGrayishMagenta: hsl(303, 10%, 53%);
+  --lightGrayishMagenta: hsl(300, 24%, 96%);
+  --White: hsl(0, 0%, 100%);
+}
+
+@font-face {
+  font-family: "LeagueSpartan";
+  src: url(https://fonts.google.com/specimen/League+Spartan);
+}
+
+html,
+body {
+  margin: 0px;
+  font-family: sans-serif;
+}
+
+.card {
+  margin: auto;
+  margin-top: 1rem;
+  background-color: white;
+  background-repeat: no-repeat;
+  padding: 6rem;
+  width: 1000px;
+}
+
+.cardTop {
+  display: flex;
+  align-items: center;
+}
+
+.cardHeading {
+  margin-right: 10rem;
+
+  & > h1 {
+    margin: 0px;
+    color: var(--veryDarkMagenta);
+    font-size: 3.5rem;
+    font-weight: bold;
+  }
+
+  & > p {
+    color: var(--darkGrayishMagenta);
+  }
+}
+
+.cardRatings {
+  & .ratingItem:nth-child(2) {
+    margin-top: 1rem;
+    margin-left: 2rem;
+  }
+
+  & .ratingItem:nth-child(3) {
+    margin-top: 1rem;
+    margin-left: 4rem;
+  }
+}
+
+.ratingItem {
+  width: 340px;
+  background-color: var(--lightGrayishMagenta);
+  padding-inline: 1rem;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  & > div {
+    margin-right: 1rem;
+  }
+  & > p {
+    color: var(--veryDarkMagenta);
+  }
+}
+
+.testemonials {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 4rem;
+
+  & .testemonialItem:nth-child(2) {
+    margin-top: 1rem;
+    margin-left: 2rem;
+  }
+  & .testemonialItem:nth-child(3) {
+    margin-top: 2rem;
+    margin-left: 2rem;
+  }
+}
+
+.testemonialItem {
+  background-color: var(--veryDarkMagenta);
+  padding: 2rem;
+  border-radius: 10px;
+  width: 300px;
+  height: 150px;
+
+  & > p {
+    color: var(--lightGrayishMagenta);
+  }
+}
+
+.TestemonialUser {
+  display: flex;
+  align-items: center;
+
+  & > img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 1.5rem;
+  }
+
+  & p:first-child {
+    margin: 0px;
+    color: var(--White);
+  }
+  & p:last-child {
+    margin: 0px;
+    color: var(--softPink);
+  }
+}
+
+@media (max-width: 450px) {
+  .card {
+    padding: 2rem;
+    width: 300px;
+  }
+
+  .cardTop {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .cardHeading {
+    margin-right: 0rem;
+
+    & > h1 {
+      text-align: center;
+      font-size: 2.5rem;
+    }
+
+    & > p {
+      text-align: center;
+      color: var(--darkGrayishMagenta);
+    }
+  }
+
+  .cardRatings {
+    & .ratingItem:nth-child(2) {
+      margin-top: 1rem;
+      margin-left: 0rem;
+    }
+
+    & .ratingItem:nth-child(3) {
+      margin-top: 1rem;
+      margin-left: 0rem;
+    }
+  }
+
+  .ratingItem {
+    width: 280px;
+    padding-inline: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-block: 1rem;
+
+    & > div {
+      margin-right: 0rem;
+    }
+    & > p {
+      margin: 0rem;
+      color: var(--veryDarkMagenta);
+    }
+  }
+
+  .testemonials {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 2rem;
+
+    & .testemonialItem:nth-child(2) {
+      margin-top: 1rem;
+      margin-left: 0rem;
+    }
+    & .testemonialItem:nth-child(3) {
+      margin-top: 1rem;
+      margin-left: 0rem;
+    }
+  }
+
+  .testemonialItem {
+    background-color: var(--veryDarkMagenta);
+    padding: 2rem;
+    border-radius: 10px;
+    width: 250px;
+    height: 150px;
+
+    & > p {
+      color: var(--lightGrayishMagenta);
+    }
+  }
+}

@@ -59,6 +59,9 @@ a:active {
   display: flex;
   align-items: center;
 }
+.justify-center{
+  justify-content: center;
+}
 .descriptionTxt {
   font-size: 1.3em;
   color: var(--color2);

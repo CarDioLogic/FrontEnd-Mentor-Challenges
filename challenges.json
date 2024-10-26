@@ -2,71 +2,91 @@
     {
         "title": "Age calculator app",
         "imageSrc": "images/imgChallenges/age calculator app img.PNG",
-        "url": "Challenges/Age calculator app/index.html"
+        "url": "Challenges/Age calculator app/index.html",
+        "isVisible": true
     },
     {
         "title": "Interactive card details",
         "imageSrc": "images/imgChallenges/interactive card details.PNG",
-        "url": "Challenges/Interactive card details/index.html"
+        "url": "Challenges/Interactive card details/index.html",
+        "isVisible": true
     },
     {
         "title": "Expenses chart",
         "imageSrc": "images/imgChallenges/expenses chart component.PNG",
-        "url": "Challenges/Expenses chart component/index.html"
+        "url": "Challenges/Expenses chart component/index.html",
+        "isVisible": true
     },
     {
         "title": "Intro section with dropdown navigation",
         "imageSrc": "images/imgChallenges/intro section with dropdown navigation.PNG",
-        "url": "Challenges/Intro section with dropdown navigation/"
+        "url": "Challenges/Intro section with dropdown navigation/",
+        "isVisible": true
     },
     {
         "title": "Advice generator app",
         "imageSrc": "images/imgChallenges/advice generator app.PNG",
-        "url": "Challenges/Advice generator app/"
+        "url": "Challenges/Advice generator app/",
+        "isVisible": true
     },
     {
         "title": "Time tracking dashboard",
         "imageSrc": "images/imgChallenges/Time tracking dashboard.PNG",
-        "url": "Challenges/Time tracking dashboard/"
+        "url": "Challenges/Time tracking dashboard/",
+        "isVisible": true
     },
     {
         "title": "Tip calculator app",
         "imageSrc": "images/imgChallenges/Tip calculator app.PNG",
-        "url": "Challenges/Tip calculator app/"
+        "url": "Challenges/Tip calculator app/",
+        "isVisible": true
     },
     {
         "title": "Bloqr landing page",
         "imageSrc": "images/imgChallenges/BlogrLandingPage.PNG",
-        "url": "Challenges/blogr landing page/"
+        "url": "Challenges/blogr landing page/",
+        "isVisible": true
     },
     {
         "title": "Crowdfunding product page",
         "imageSrc": "images/imgChallenges/Crowdfunding.jpg",
-        "url": "Challenges/Crowdfunding product page/"
+        "url": "Challenges/Crowdfunding product page/",
+        "isVisible": true
     },
     {
         "title": "3-collumn card preview",
         "imageSrc": "images/imgChallenges/3-collumnPreviewCardComponent.PNG",
-        "url": "Challenges/3-column preview card component/"
+        "url": "Challenges/3-column preview card component/",
+        "isVisible": true
     },
     {
         "title": "Ping single column coming soon page",
         "imageSrc": "images/imgChallenges/pingSingleColumnComingSoonPage.JPG",
-        "url": "Challenges/Ping single column coming soon page/"
+        "url": "Challenges/Ping single column coming soon page/",
+        "isVisible": true
     },
     {
         "title": "Four Card Feature Section",
         "imageSrc": "images/imgChallenges/fourCardFeatureSection.PNG",
-        "url": "Challenges/Four card feature section/"
+        "url": "Challenges/Four card feature section/",
+        "isVisible": true
     },
     {
         "title": "Order Summary Component",
         "imageSrc": "images/imgChallenges/orderSummaryComponent.PNG",
-        "url": "Challenges/Order summary component/"
+        "url": "Challenges/Order summary component/",
+        "isVisible": true
     },
     {
         "title": "Newsletter SignUp Form With Success Message",
         "imageSrc": "images/imgChallenges/newsletterSignUpFormWithSuccessMessage.PNG",
-        "url": "Challenges/Newsletter sign-up form with success message/"
+        "url": "Challenges/Newsletter sign-up form with success message/",
+        "isVisible": true
+    },
+    {
+        "title": "Social proof section",
+        "imageSrc": "images/imgChallenges/socialProofSection.PNG",
+        "url": "Challenges/Social proof section/",
+        "isVisible": true
     }
 ]
