@@ -169,5 +169,14 @@
         "dificulty": {
             "Newbie": 1
         }
+    },
+    {
+        "title": "Results summary component",
+        "imageSrc": "images/imgChallenges/resultsSummaryComponent.PNG",
+        "url": "Challenges/Results summary component/",
+        "isVisible": true,
+        "dificulty": {
+            "Newbie": 1
+        }
     }
 ]

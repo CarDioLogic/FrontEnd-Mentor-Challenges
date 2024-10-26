@@ -1,0 +1,204 @@
+@import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk&display=swap');
+
+:root{
+    --lightRed: 0, 100%, 67%;
+    --orangeYellow: 39, 100%, 56%;
+    --greenTeal: 166, 100%, 37%;
+    --cobaltBlue: 234, 85%, 45%;
+    /*gradients*/
+    --lightSlateBlue: hsl(252, 100%, 67%);
+    --lightRoyalBlue: hsl(241, 81%, 54%);
+    --violetBlue: hsla(256, 72%, 46%, 1);
+    --persianBlue: hsla(241, 72%, 46%, 0);
+    /*neutral*/
+    --paleBlue:  hsl(221, 100%, 96%);
+    --lightLavender: hsl(241, 100%, 89%);
+    --darkGrayBlue: hsl(224, 30%, 27%);
+}
+
+html, h2, h3{
+    margin: 0px;
+    font-weight: normal;
+    font-family: 'Hanken Grotesk';
+}
+
+h1{
+    margin-bottom: 1%;
+}
+
+.card{
+    margin: 0 auto;
+    width: 70vw;
+    display: flex;
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5); 
+}
+
+.results{
+    color:white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 20px;
+    background: linear-gradient(to top, var(--violetBlue), var(--lightSlateBlue));
+    padding-inline: 8%;
+    padding-block: 4%;
+}
+
+.results h2{
+    margin-bottom: 2vh;
+}
+
+.results p{
+    text-align: center;
+}
+
+.circleResult{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background-color: var(--violetBlue);
+    width: 200px; 
+    height: 200px;
+    line-height: 0.8;
+}
+
+.result,
+.total {
+    margin: 0; 
+    margin-top: 1vh;
+}
+
+.result{
+    font-size: 5rem;
+}
+
+.total{
+    margin-top: 1vh;
+}
+
+.details{
+    padding: 2vw;
+    width:100%;
+}
+
+.details h2{
+    margin-inline:0px;
+    margin-bottom: 1.5vh;
+}
+
+.detail1, .detail2, .detail3, .detail4{
+    display: flex;
+    justify-content: space-between;
+    border-radius: 20px;
+    padding-block: 1vh;
+    padding-inline: 2vw;
+    margin-inline:0px;
+    margin-bottom: 10px;
+    align-items: center;
+}
+
+.left, .right{
+    display: flex;
+}
+
+.detail1{
+    background-color: hsla(var(--lightRed), 0.5);
+}
+.detail2 {
+    background-color: hsla(var(--orangeYellow), 0.5);
+}
+.detail3{
+    background-color: hsla(var(--greenTeal), 0.5);
+}
+.detail4{
+    background-color: hsla(var(--cobaltBlue), 0.5);
+}
+
+.detail1 .left h3{
+    color: hsl(var(--lightRed));
+}
+.detail2 .left h3 {
+    color: hsl(var(--orangeYellow));
+}
+.detail3 .left h3{
+    color: hsl(var(--greenTeal));
+}
+.detail4 .left h3{
+    color: hsl(var(--cobaltBlue));
+}
+
+.icon{
+    margin-right: 0.5vw;
+}
+
+.detailsBtn{
+    margin-top: 2vh;
+    width: 100%;
+    border:none;
+    border-radius: 20px;
+    padding: 1.5vh;
+    background-color: var(--darkGrayBlue);
+    color: white;
+    cursor: pointer;
+}
+.detailsBtn:hover{
+    background-color: var(--violetBlue);
+}
+
+@media only screen and (max-width: 750px) {
+
+    .circleResult{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        background-color: var(--violetBlue);
+        line-height: 0.8;
+        width: 200px;
+        height: 200px;
+    }
+
+    .card{
+        width: auto;
+        display: block;
+        background-color: white;
+        border-radius: 20px;
+        box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5);
+    }
+
+    .results{
+        color:white;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border-radius: 20px;
+        background: linear-gradient(to top, var(--violetBlue), var(--lightSlateBlue));
+        padding-inline: 8%;
+        padding-block: 4%;
+    }
+
+    .details{
+        padding: 0px;
+        padding-block: 1em;
+    }
+
+    .details h2{
+        margin-inline: 2vw;
+    }
+
+    
+    .detail1, .detail2, .detail3, .detail4{
+        display: flex;
+        border-radius: 20px;
+        padding-block: 1vh;
+        padding-inline: 2vw;
+        margin-inline: 2vw;
+        margin-bottom: 10px;
+        align-items: center;
+    }
+  }
