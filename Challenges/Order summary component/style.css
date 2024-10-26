@@ -1,0 +1,187 @@
+:root {
+  --paleBlue: hsl(225, 100%, 94%);
+  --brightBlue: hsl(245, 75%, 52%);
+  --veryPaleBlue: hsl(225, 100%, 98%);
+  --desaturatedBlue: hsl(224, 23%, 55%);
+  --barkBlue: hsl(223, 47%, 23%);
+}
+
+@font-face {
+  font-family: "RedHatDisplay";
+  src: url(https://fonts.google.com/specimen/Red+Hat+Display);
+}
+
+html,
+body {
+  margin: 0px;
+  background-color: var(--paleBlue);
+  font-family: "RedHatDisplay", sans-serif;
+}
+
+.card {
+  margin: auto;
+  margin-top: 2rem;
+  background-color: white;
+  border-radius: 20px;
+  width: 400px;
+  overflow: hidden;
+
+  & > img {
+    width: 100%;
+  }
+}
+
+.cardDetails {
+  padding: 2rem;
+
+  & > h2 {
+    margin: 0px;
+    text-align: center;
+  }
+
+  & > p {
+    text-align: center;
+  }
+}
+
+.priceBox {
+  margin-block: 0px;
+  display: flex;
+  background-color: var(--veryPaleBlue);
+  border-radius: 0.5rem;
+  padding: 1rem;
+  align-items: center;
+
+  & img {
+    margin-block: 0px;
+    margin-right: 20px;
+    height: 40px;
+    width: 40px;
+  }
+
+  & p {
+    margin-block: 0px;
+    font-size: 0.8rem;
+  }
+
+  & a:last-child {
+    font-size: 0.8rem;
+  }
+
+  & > div {
+    margin-right: auto;
+  }
+
+  & > div > p:first-child {
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+
+  & > div > p:nth-child(2) {
+    font-weight: lighter;
+  }
+}
+button {
+  cursor: pointer;
+}
+.buttonsGroup {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+
+  & .continueBtn {
+    border: none;
+    border-radius: 10px;
+    background-color: var(--barkBlue);
+    color: white;
+    padding-block: 0.5rem;
+    font-size: 0.8rem;
+
+    box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.05);
+  }
+
+  & .cancelBtn {
+    margin-top: 10px;
+    border: none;
+    border-radius: 10px;
+    background-color: white;
+    color: var(--barkBlue);
+    padding-block: 0.5rem;
+    font-size: 0.8rem;
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  .card {
+    border-radius: 20px;
+    width: 300px;
+    overflow: hidden;
+
+    & > img {
+      width: 100%;
+    }
+  }
+
+  .cardDetails {
+    padding: 1rem;
+
+    & > h2 {
+      font-size: 1.2rem;
+    }
+
+    & > p {
+      font-size: 0.8rem;
+    }
+  }
+
+  .priceBox {
+    padding: 1rem;
+
+    & img {
+      margin-right: 20px;
+      height: 40px;
+      width: 40px;
+    }
+
+    & p {
+      margin-block: 0px;
+      font-size: 0.8rem;
+    }
+
+    & a:last-child {
+      font-size: 0.8rem;
+    }
+
+    & > div {
+      margin-right: auto;
+    }
+
+    & > div > p:first-child {
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+
+    & > div > p:nth-child(2) {
+      font-weight: lighter;
+    }
+  }
+
+  .buttonsGroup {
+    margin-top: 20px;
+
+    & .continueBtn {
+      padding-block: 0.5rem;
+      font-size: 0.8rem;
+    }
+
+    & .cancelBtn {
+      margin-top: 10px;
+      border: none;
+      border-radius: 10px;
+      background-color: white;
+      color: var(--barkBlue);
+      padding-block: 0.5rem;
+      font-size: 0.8rem;
+    }
+  }
+}

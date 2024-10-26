@@ -58,5 +58,15 @@
         "title": "Four Card Feature Section",
         "imageSrc": "images/imgChallenges/fourCardFeatureSection.PNG",
         "url": "Challenges/Four card feature section/"
+    },
+    {
+        "title": "Order Summary Component",
+        "imageSrc": "images/imgChallenges/orderSummaryComponent.PNG",
+        "url": "Challenges/Order summary component/"
+    },
+    {
+        "title": "Newsletter SignUp Form With Success Message",
+        "imageSrc": "images/imgChallenges/newsletterSignUpFormWithSuccessMessage.PNG",
+        "url": "Challenges/Newsletter sign-up form with success message/"
     }
 ]

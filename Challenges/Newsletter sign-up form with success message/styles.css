@@ -1,0 +1,171 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+:root{
+--Tomato: hsl(4, 100%, 67%);
+--DarkSlateGrey: hsl(234, 29%, 20%);
+--CharcoalGrey: hsl(235, 18%, 26%);
+--Grey: hsl(231, 7%, 60%);
+--White: hsl(0, 0%, 100%);
+}
+html, body{
+    height: 100vh;
+}
+
+h1, p {
+    margin:0;
+}
+
+body{
+    margin: 0;
+    font-family: "Roboto", sans-serif;
+    background-color: var(--DarkSlateGrey);
+}
+
+.card, .cardValid{
+    font-size: 1.2rem;
+    height: 100vh;
+    color: var(--DarkSlateGrey);
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+}
+
+.cardValid{
+
+    gap:1em;
+    margin: auto;
+    min-width: 80vw;
+    padding: 1em;
+}
+
+.content{
+    padding: 1.5em;
+    order: 1
+}
+
+
+.imgContainer{
+    height: 30vh;
+    order: 0;
+    border-radius: 0 0 20px 20px;
+    background-image: url("assets/images/illustration-sign-up-mobile.svg");
+}
+
+.listTitle{
+    margin-block: 1em;
+}
+
+.listItem{
+    margin-block: 1em;
+    display: flex;
+}
+
+.emailForm{
+    margin-top: 2em;
+    display: flex;
+    flex-direction: column;
+}
+
+.label{
+    display: flex
+}
+
+.error-message {
+    color: red;
+    margin-left: auto;
+
+  }
+
+.submitBtn{
+    margin-top: 1em;
+    background-color: var(--DarkSlateGrey);
+    color: white;
+    border-radius: 10px;
+    padding-block:0.8em;
+    width: 100%;
+    cursor:pointer;
+}
+
+.submitBtn.margin-top-20{
+    margin-top:10em;
+}
+.submitBtn:hover{
+    background-color: var(--CharcoalGrey);
+}
+
+.emailInput, .error{
+    border-radius: 10px;
+    margin-block: 0.2em;
+    margin-bottom: 1.5em;
+    padding: 1em;
+}
+
+.error{
+    border: 1px solid red;
+    background-color: var(--Tomato);
+    color: red;
+}
+
+.icon{
+    width: 20px;
+    height: 20px;
+    margin-right: 0.5em;
+}
+
+.hidden{
+    display: none;
+}
+
+@media (min-width: 600px){
+    .card{
+        font-size: 1rem;
+        height: auto;
+        min-height: 70vh;
+        flex-direction: row;
+        border-radius: 20px;
+        max-width: 70%;
+        margin: auto;
+        margin-top: 2em;
+        padding: 2em;
+    }
+
+    .cardValid{
+        font-size: 1rem;
+
+        margin-top: 2em;
+        height: auto;
+        min-width: 300px;
+        max-width: 30vw;
+        padding:2em;
+        border-radius: 20px;
+    }
+
+    .content{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 0em;
+        order: 0;
+        width: 60%;
+        margin-right: 3em;
+
+        h1{
+            font-size: 3rem;
+        }
+    }
+    .listItem{
+        margin-block: 0.5em;
+        display: flex;
+    }
+    
+    .imgContainer{
+        height: auto;
+        order: 1;
+        width: 50%;
+        border-radius: 20px;
+        background-image: url("assets/images/illustration-sign-up-desktop.svg");
+    }
+    .submitBtn.margin-top-20{
+        margin-top:1em;
+    }
+}
