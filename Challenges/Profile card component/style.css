@@ -1,0 +1,108 @@
+:root {
+  --darkCyan: hsl(185, 75%, 39%);
+  --veryDarkDesaturatedBlue: hsl(229, 23%, 23%);
+  --darkGrayishBlue: hsl(227, 10%, 46%);
+  --darkGray: hsl(0, 0%, 59%);
+}
+
+@font-face {
+  font-family: "Kumbh Sans", sans-serif;
+  src: url("https://fonts.google.com/specimen/Kumbh+Sans");
+}
+
+html,
+body {
+  margin: 0px;
+  display: flex;
+  justify-content: center;
+  font-family: sans-serif;
+  background-image: url(images/bg-pattern-top.svg);
+}
+
+h2,
+p {
+  margin: 0px;
+}
+
+.card {
+  margin-top: 5rem;
+  background-color: white;
+  border-radius: 15px;
+  overflow: hidden;
+  text-align: center;
+}
+
+.cardContent {
+  margin: 0px;
+  margin-top: 0.5rem;
+  padding: 1.5rem;
+
+  & > img {
+    margin-top: -50rem;
+    border-radius: 50%;
+    border: 5px solid white;
+  }
+}
+
+.userBox {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+
+  & h2 {
+    margin-bottom: 10px;
+  }
+
+  & h2:first-child {
+    margin-right: 10px;
+  }
+  & h2:last-child {
+    color: var(--darkGray);
+  }
+}
+
+.statistics {
+  display: flex;
+  justify-content: space-around;
+  padding: 1.5rem;
+}
+
+@media only screen and (max-width: 400px) {
+  .card {
+    margin-top: 5rem;
+    width: 300px;
+  }
+
+  .cardContent {
+    margin: 0px;
+    margin-top: 0.5rem;
+    padding: 1.5rem;
+
+    & p {
+      font-size: 0.8rem;
+      color: var(--darkGray);
+    }
+  }
+
+  .userBox {
+    margin-top: 20px;
+
+    & h2 {
+      margin-bottom: 10px;
+      font-size: 1.2rem;
+    }
+  }
+
+  .statistics {
+    padding: 0.8rem;
+  }
+
+  .statisticsItem h2 {
+    font-size: 1.2rem;
+  }
+
+  .statisticsItem p {
+    font-size: 0.7rem;
+    color: var(--darkGray);
+  }
+}

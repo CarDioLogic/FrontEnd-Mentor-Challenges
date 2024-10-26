@@ -199,8 +199,17 @@
     },
     {
         "title": "Product preview card component follow trough",
-        "imageSrc": "images/imgChallenges/articlePreviewComponent.PNG",
+        "imageSrc": "images/imgChallenges/productPreviewCardComponentFollowTrough.PNG",
         "url": "Challenges/Product preview card component follow trough/",
+        "isVisible": true,
+        "dificulty": {
+            "Newbie": 1
+        }
+    },
+    {
+        "title": "Profile card component",
+        "imageSrc": "images/imgChallenges/profileCardComponent.PNG",
+        "url": "Challenges/Profile card component/",
         "isVisible": true,
         "dificulty": {
             "Newbie": 1
