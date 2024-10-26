@@ -160,5 +160,14 @@
         "dificulty": {
             "Newbie": 1
         }
+    },
+    {
+        "title": "Intro component with sign-up form",
+        "imageSrc": "images/imgChallenges/introComponentWithSignUpForm.PNG",
+        "url": "Challenges/Intro component with sign-up form/",
+        "isVisible": true,
+        "dificulty": {
+            "Newbie": 1
+        }
     }
 ]
