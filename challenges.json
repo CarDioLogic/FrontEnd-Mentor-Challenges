@@ -178,5 +178,14 @@
         "dificulty": {
             "Newbie": 1
         }
+    },
+    {
+        "title": "Stats preview card component",
+        "imageSrc": "images/imgChallenges/statsPreviewCardComponent.PNG",
+        "url": "Challenges/Stats preview card component/",
+        "isVisible": true,
+        "dificulty": {
+            "Newbie": 1
+        }
     }
 ]
