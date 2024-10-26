@@ -151,5 +151,14 @@
         "dificulty": {
             "Newbie": 1
         }
+    },
+    {
+        "title": "Huddle landing page with a single introductory section",
+        "imageSrc": "images/imgChallenges/huddleLandingPageWithASingleIntroductorySection.PNG",
+        "url": "Challenges/Huddle landing page with a single introductory section/",
+        "isVisible": true,
+        "dificulty": {
+            "Newbie": 1
+        }
     }
 ]
