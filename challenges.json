@@ -196,5 +196,14 @@
         "dificulty": {
             "Newbie": 1
         }
+    },
+    {
+        "title": "Product preview card component follow trough",
+        "imageSrc": "images/imgChallenges/articlePreviewComponent.PNG",
+        "url": "Challenges/Product preview card component follow trough/",
+        "isVisible": true,
+        "dificulty": {
+            "Newbie": 1
+        }
     }
 ]
