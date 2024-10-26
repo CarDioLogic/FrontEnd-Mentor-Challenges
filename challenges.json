@@ -187,5 +187,14 @@
         "dificulty": {
             "Newbie": 1
         }
+    },
+    {
+        "title": "Article preview component",
+        "imageSrc": "images/imgChallenges/articlePreviewComponent.PNG",
+        "url": "Challenges/Article preview component/",
+        "isVisible": true,
+        "dificulty": {
+            "Newbie": 1
+        }
     }
 ]
