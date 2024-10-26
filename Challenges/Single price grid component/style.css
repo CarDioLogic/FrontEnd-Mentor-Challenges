@@ -1,0 +1,177 @@
+@import url(https://fonts.google.com/specimen/Karla);
+
+:root {
+  --Cyan: hsl(179, 62%, 43%);
+  --lightCyan: hsl(179, 62%, 55%);
+  --BrightYellow: hsl(71, 73%, 54%);
+  --LightGray: hsl(204, 43%, 93%);
+  --GrayishBlue: hsl(218, 22%, 67%);
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background-color: white;
+  font-size: 16px;
+  font-family: "Karla", sans-serif;
+}
+
+.container {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  margin-block: 4em;
+  margin: 0 auto;
+  background-color: white;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.main {
+  padding: 2em;
+  > h1 {
+    color: var(--Cyan);
+    font-size: 1.5rem;
+  }
+  > h2 {
+    color: var(--BrightYellow);
+    font-size: 1rem;
+  }
+  > p {
+    color: var(--GrayishBlue);
+    font-size: 1rem;
+    line-height: 1.8em;
+  }
+}
+
+.secondary--1 {
+  padding: 2em;
+  color: white;
+  background-color: var(--Cyan);
+
+  > div {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+
+    > h2 {
+      margin: 0;
+      margin-right: 0.5em;
+    }
+    > p {
+      color: var(--LightGray);
+    }
+  }
+
+  > h2 {
+    margin: 0;
+    font-size: 1.2rem;
+  }
+  > p {
+    margin: 0;
+  }
+  > button {
+    width: 100%;
+    margin-top: 2em;
+    padding-block: 1em;
+    border: none;
+    background-color: var(--BrightYellow);
+    color: white;
+    border-radius: 5px;
+    box-shadow: 5px 21px 42px -18px rgba(0, 0, 0, 0.68);
+  }
+}
+
+.secondary--2 {
+  padding: 2em;
+  color: white;
+  background-color: var(--lightCyan);
+
+  > h2 {
+    margin: 0;
+    margin-bottom: 1em;
+    font-size: 1.2rem;
+  }
+
+  p {
+    margin-block: 0.5em;
+    color: var(--LightGray);
+  }
+}
+
+@media (min-width: 600px) {
+  .container {
+    margin-block: 4em;
+    width: 80%;
+  }
+
+  .main {
+    padding: 3em;
+
+    > h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1em;
+    }
+    > h2 {
+      font-size: 1.5rem;
+    }
+    > p {
+      color: var(--GrayishBlue);
+      font-size: 1.5rem;
+      line-height: 1.5em;
+    }
+  }
+
+  .secondary {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+  }
+
+  .secondary--1 {
+    padding: 3em;
+    width: 100%;
+
+    > h2 {
+      margin-block: 0.5em;
+      font-size: 1.8rem;
+    }
+    > div {
+      > h2 {
+        font-size: 3rem;
+      }
+      > p {
+        color: var(--LightGray);
+        font-size: 1.2rem;
+      }
+    }
+
+    > p {
+      font-size: 1.2rem;
+    }
+    > button {
+      width: 100%;
+      margin-top: 2em;
+
+      border: none;
+      background-color: var(--BrightYellow);
+      color: white;
+      border-radius: 5px;
+      font-size: 1.5rem;
+      box-shadow: 5px 21px 42px -18px rgba(0, 0, 0, 0.68);
+      cursor: pointer;
+    }
+  }
+
+  .secondary--2 {
+    padding: 3em;
+    width: 100%;
+
+    > h2 {
+      margin-block: 0.5em;
+      font-size: 1.8rem;
+    }
+
+    p {
+      font-size: 1.2rem;
+    }
+  }
+}

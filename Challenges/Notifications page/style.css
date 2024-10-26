@@ -1,0 +1,140 @@
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap");
+
+:root {
+  --Red: hsl(1, 90%, 64%);
+  --Blue: hsl(219, 85%, 26%);
+  --White: hsl(0, 0%, 100%);
+  --Verylightgrayishblue: hsl(210, 60%, 98%);
+  --Lightgrayishblue1: hsl(211, 68%, 94%);
+  --Lightgrayishblue2: hsl(205, 33%, 90%);
+  --Grayishblue: hsl(219, 14%, 63%);
+  --Darkgrayishblue: hsl(219, 12%, 42%);
+  --Verydarkblue: hsl(224, 21%, 14%);
+}
+
+img {
+  max-width: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 16px;
+  padding: 1em;
+
+  @media (min-width: 600px) {
+    padding: 4em;
+  }
+}
+
+.notifications {
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+.notificationsSection {
+  display: flex;
+  align-items: center;
+
+  h2 {
+    margin-right: 0.5em;
+  }
+}
+
+.nbrNotifications {
+  background-color: var(--Blue);
+  color: white;
+  border-radius: 5px;
+  border: none;
+}
+
+.notifcationsBtn {
+  margin-left: auto;
+  border: none;
+  background-color: transparent;
+}
+.notifcationsBtn:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+
+.notification {
+  background-color: transparent;
+  border-radius: 5px;
+  padding: 1em;
+  display: flex;
+  align-items: start;
+  transition: background-color 200ms ease-in;
+
+  p {
+    margin: 0;
+    display: inline;
+  }
+}
+.notification:hover {
+  background-color: var(--Grayishblue);
+}
+.notificationContent {
+  color: black;
+}
+
+.unreadNotification {
+  background-color: var(--Lightgrayishblue2);
+}
+.unreadNotificationContent {
+  color: black;
+}
+.unreadNotificationContent::after {
+  content: "";
+  background-color: red;
+  position: absolute;
+  margin-top: 0.4em;
+  margin-left: 0.5em;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.notificationContentSection {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.notificationComment {
+  margin-top: 1em;
+  background-color: white;
+  padding: 1em;
+  border-radius: 10px;
+  border: solid var(--Grayishblue) 1px;
+}
+
+.imgProfileUser {
+  margin-right: 1em;
+  width: 5%;
+}
+
+/* only for the a elements inside the p notificationContent */
+.user {
+  font-weight: bolder;
+  text-decoration: none;
+  color: black;
+}
+.post {
+  font-weight: bold;
+  text-decoration: none;
+  color: black;
+}
+.group {
+  font-weight: bolder;
+  text-decoration: none;
+  color: var(--Blue);
+}
+
+.imgPost {
+  margin-left: auto;
+  width: 6%;
+}

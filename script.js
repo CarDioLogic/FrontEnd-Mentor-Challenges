@@ -5,7 +5,8 @@
         const challengesContainer = document.querySelector('.challengesContainer');
         
         challenges.forEach(challenge => {
-          const challengeDiv = document.createElement('div');
+          if(challenge.isVisible === true){
+            const challengeDiv = document.createElement('div');
           challengeDiv.classList.add('challenge');
           
           const title = document.createElement('h3');
@@ -29,6 +30,7 @@
           challengeDiv.appendChild(imgContainer);
           
           challengesContainer.appendChild(challengeDiv);
+          }
         });
       })
       .catch(error => console.error('Error fetching challenges:', error));
