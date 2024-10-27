@@ -214,5 +214,14 @@
         "dificulty": {
             "Newbie": 1
         }
+    },
+    {
+        "title": "News homepage",
+        "imageSrc": "images/imgChallenges/newsHomepage.PNG",
+        "url": "Challenges/News homepage/",
+        "isVisible": true,
+        "dificulty": {
+            "Junior": 2
+        }
     }
 ]
