@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Text&display=swap" rel="stylesheet">
+
+  <title>Frontend Mentor | Product list with cart</title>
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+</head>
+<body>
+
+  <div class="grid">
+    <div class="">
+      <h2 class="desserts-title">Desserts</h2>
+      <div class="desserts" id="desserts-container">
+      </div>    
+    </div>
+    <div>
+      <div class="cart" id="cart-container">
+        <h2 class="color-red">Your cart (<span id="cart-items-nbr-display">0</span>)</h2>
+        <div id="cart-items-content">
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+  <!--modal-->
+  <div class="modal hidden" id="order-confirmed-modal">
+    <div class="modal-content" id="model-content">
+      <img src="assets/images/icon-order-confirmed.svg" alt="">
+      <h2 class="bolder desserts-title">Order Confirmed</h2>
+      <p>We hope you enjoy your food!</p>
+      <div class="modal-order-list-container" id="modal-order-list-container">
+      </div>
+      <button class="confirm-order-btn" onclick="startNewOrder()">Start New Order</button>
+    </div>
+  </div>
+<script>
+  let cart = [];
+  let desserts = []; //change this to const later
+  const dessertsContainer = document.getElementById('desserts-container');
+  const cartItemsDisplay = document.getElementById('cart-items-nbr-display');
+  const cartItemsContent = document.getElementById('cart-items-content');
+  let orderTotal = 0;
+  const orderModal = document.getElementById('order-confirmed-modal');
+
+  window.onclick = function(event) {
+    if (event.target == orderModal) {
+      closeModal();
+    }
+  }
+
+  document.addEventListener('DOMContentLoaded', async function(){
+    data = await getDesserts();
+    renderAllDessertCards();
+  });
+
+  function renderAllDessertCards(){
+    dessertsContainer.innerHTML = '';
+
+    desserts = data.map(dessert => ({
+      ...dessert,
+      quantity: 0
+    }))
+    
+    desserts.forEach(ds => {
+        renderDessertCard(ds);
+    });
+    processCartRendering();
+  }
+
+  function renderDessertCard(ds){
+    //card
+    let cardHtml = document.createElement('div');
+    cardHtml.classList.add('dessert-card')
+    cardHtml.id = `card_${ds.name}`;
+    
+    //cardImg
+    const img = document.createElement('img');
+    img.id = `image_${ds.name}`;
+    img.classList.add('card-image');
+    if(getCurrentDeviceSize() == 'desktop'){
+      img.src = ds.image.desktop;
+    } else if (getCurrentDeviceSize() == 'tablet'){
+      img.src = ds.image.tablet;
+    } else {
+      img.src = ds.image.mobile;
+    }
+    cardHtml.appendChild(img);
+
+    //add to cart parent container
+    const addToCartContainer = document.createElement('div');
+    addToCartContainer.id = `addToCart_Container_${ds.name}`;
+    addToCartContainer.classList.add('addToCart-container');
+    cardHtml.appendChild(addToCartContainer);
+
+    let dessertDetailsContainer = document.createElement('div');
+    dessertDetailsContainer.classList.add('dessert-details-container');
+
+    let dessertCategoryPar = document.createElement('p');
+    dessertCategoryPar.textContent = ds.category;
+    dessertCategoryPar.classList.add('dessert-category');
+    dessertDetailsContainer.appendChild(dessertCategoryPar);
+
+    let dessertNamePar = document.createElement('p');
+    dessertNamePar.classList.add('bolder', 'text-start');
+    dessertNamePar.textContent = ds.name;
+    dessertDetailsContainer.appendChild(dessertNamePar);
+
+    let dessertPricePar = document.createElement('p');
+    dessertPricePar.classList.add('dessert-price');
+    dessertPricePar.textContent = `$${ds.price}`;
+    dessertDetailsContainer.appendChild(dessertPricePar);
+
+    cardHtml.appendChild(dessertDetailsContainer);
+    dessertsContainer.appendChild(cardHtml);
+    RenderAddToCardTransition(ds.name); //needs to run after DOM elements are already on page
+  }
+
+  function RenderAddToCardTransition(name){
+    let addToCartContainer = findAddToCartContainer(name);
+    addToCartContainer.innerHTML = '';
+
+    let cartItem = cart.find(d => d.name === name)
+
+    if(cartItem == undefined){
+      renderAddToCartButton(name);
+    } else {
+      renderAddToCartInputs(name);
+    }
+  }
+
+  
+  function processCartRendering(){
+    cartItemsContent.innerHTML = '';
+    if(cart.length < 1){
+      renderEmptyCart();
+    } else {
+      renderCart();
+    }
+  }
+
+  function renderEmptyCart(){
+    cartItemsDisplay.textContent  = 0;
+    const emptyCartImg = document.createElement('img');
+    emptyCartImg.src = 'assets/images/illustration-empty-cart.svg';
+    emptyCartImg.classList.add('empty-cart-img');
+    cartItemsContent.appendChild(emptyCartImg);
+
+    const emptyCartMsg = document.createElement('p');
+    emptyCartMsg.textContent = "Your added items will appear here";
+    emptyCartMsg.classList.add('empty-cart-msg');
+    cartItemsContent.appendChild(emptyCartMsg);
+  }
+
+  function renderCart(){
+    cartItemsDisplay.textContent  = cart.length;
+    orderTotal = 0;
+
+    cart.forEach(item => {
+      orderTotal += item.price * item.quantity;
+
+      //item parent container
+      const itemContainer = document.createElement('div');
+      itemContainer.classList.add('cart-item-container', 'flex-between');
+
+      //item details container
+      const itemDetails = document.createElement('div');
+      itemDetails.classList.add('someChiet');
+      //item name
+      const itemName = document.createElement('p');
+      itemName.classList.add('bolder', 'text-start');
+      itemName.textContent = item.name;
+      itemDetails.appendChild(itemName);
+      //item quantitites
+      const itemQuantities = document.createElement('div');
+      itemQuantities.classList.add('flex-start');
+      const itemQuantity = document.createElement('span');
+      itemQuantity.classList.add('color-red', 'bolder');
+      itemQuantity.textContent = `${item.quantity}x`;
+      itemQuantities.appendChild(itemQuantity);  
+
+      const itemPrice = document.createElement('span');
+      itemPrice.textContent = `@${item.price}`;
+      itemQuantities.appendChild(itemPrice);
+
+      const itemPriceTotal = document.createElement('span');
+      itemPriceTotal.textContent = `$${item.price * item.quantity}`;
+      itemQuantities.appendChild(itemPriceTotal);  
+
+      itemDetails.appendChild(itemQuantities);
+      itemContainer.appendChild(itemDetails);
+
+      //item remove icon
+      const removeItemIcon = document.createElement('img');
+      removeItemIcon.addEventListener('click', function(){
+        removeItemFromCart(item.name);
+      });
+      removeItemIcon.src = 'assets/images/icon-remove-item.svg';
+      removeItemIcon.classList.add('remove-item-icon');
+      itemContainer.appendChild(removeItemIcon);
+      
+
+      cartItemsContent.appendChild(itemContainer);
+    });    
+
+    //render order total
+    const orderTotalContainer = document.createElement('div');
+    orderTotalContainer.classList.add('flex-between');
+    const orderTotalTitle = document.createElement('span');
+    orderTotalTitle.textContent = 'Order Total';
+    orderTotalContainer.appendChild(orderTotalTitle);
+    const orderTotalValue = document.createElement('span');
+    orderTotalValue.classList.add('bolder');
+    orderTotalValue.textContent = `$${orderTotal}`;
+    orderTotalContainer.appendChild(orderTotalValue);
+    cartItemsContent.appendChild(orderTotalContainer)
+
+    //carbon div
+    const carbonDiv = document.createElement('div');
+    carbonDiv.classList.add('carbon-div');
+    const carbonImg = document.createElement('img');
+    carbonImg.src = 'assets/images/icon-carbon-neutral.svg';
+    carbonDiv.appendChild(carbonImg);
+    const carbonPar = document.createElement('p');
+    carbonPar.innerHTML = 'This is a <span class="bolder">carbon-neutral</span> delivery.';
+    carbonDiv.appendChild(carbonPar)
+    cartItemsContent.appendChild(carbonDiv);
+
+    const confirmBtn = document.createElement('button');
+    confirmBtn.classList.add('confirm-order-btn');
+    confirmBtn.textContent = 'Confirm order';
+    confirmBtn.addEventListener('click', renderModal);
+    cartItemsContent.appendChild(confirmBtn);
+
+  }
+
+  function renderModal(){
+    orderModal.classList.remove('hidden');
+
+    const modalOrderListContainer = document.getElementById('modal-order-list-container');
+    modalOrderListContainer.innerHTML = '';
+
+    cart.forEach(item => {
+      //parent
+      const itemContainer = document.createElement('div');
+      itemContainer.classList.add('cart-item-container', 'flex-between');
+
+      //item details container
+      const itemDetails = document.createElement('div');
+      itemDetails.classList.add('flex-start');
+      //itemImg
+      const itemImg = document.createElement('img');
+      itemImg.classList.add('modal-item-img');
+      itemImg.src = item.image.thumbnail;
+      itemDetails.appendChild(itemImg);
+      
+      const itemDetailsText = document.createElement('div');
+      //item name
+      const itemName = document.createElement('p');
+      itemName.classList.add('bolder');
+      itemName.textContent = item.name;
+      itemDetailsText.appendChild(itemName);
+      //item quantitites
+      const itemQuantities = document.createElement('div');
+      itemQuantities.classList.add('flex-start');
+      const itemQuantity = document.createElement('span');
+      itemQuantity.classList.add('color-red', 'bolder');
+      itemQuantity.textContent = `${item.quantity}x`;
+      itemQuantities.appendChild(itemQuantity);  
+
+      const itemPrice = document.createElement('span');
+      itemPrice.textContent = `@${item.price}`;
+      itemQuantities.appendChild(itemPrice);
+
+      itemDetailsText.appendChild(itemQuantities);
+
+      itemDetails.appendChild(itemDetailsText);
+      itemContainer.appendChild(itemDetails);
+
+      const itemPriceTotal = document.createElement('span');
+      itemPriceTotal.textContent = `$${item.price * item.quantity}`;
+      itemContainer.appendChild(itemPriceTotal);
+      
+      cartItemsContent.appendChild(itemContainer);
+
+      modalOrderListContainer.appendChild(itemContainer);
+    });
+
+    //render order total
+    const orderTotalContainer = document.createElement('div');
+    orderTotalContainer.classList.add('flex-between');
+    const orderTotalTitle = document.createElement('span');
+    orderTotalTitle.textContent = 'Order Total';
+    orderTotalContainer.appendChild(orderTotalTitle);
+    const orderTotalValue = document.createElement('span');
+    orderTotalValue.classList.add('desserts-title');
+    orderTotalValue.textContent = `$${orderTotal}`;
+    orderTotalContainer.appendChild(orderTotalValue);
+    modalOrderListContainer.appendChild(orderTotalContainer);
+  }
+
+  function startNewOrder(){
+    cart = [];
+
+    renderAllDessertCards();
+    closeModal();
+  }
+
+  function closeModal(){
+    orderModal.classList.add('hidden');
+  }
+
+
+  function renderAddToCartButton(name){
+    let addToCartContainer = findAddToCartContainer(name);
+    addToCartContainer.classList.remove('active');
+    document.getElementById(`image_${name}`).classList.remove('active');
+
+    let addToCartButton = document.createElement('div');
+    addToCartButton.classList.add('addToCard-Button');
+      addToCartButton.innerHTML = '<img src="assets/images/icon-add-to-cart.svg" alt=""> <span>Add to cart</span>';
+      addToCartButton.addEventListener('click', function(){
+        increaseDessertToCart(name);
+      });
+      addToCartContainer.appendChild(addToCartButton);
+  }
+
+  function renderAddToCartInputs(name){
+    let addToCartContainer = findAddToCartContainer(name);
+    addToCartContainer.classList.add('active');
+    document.getElementById(`image_${name}`).classList.add('active');
+
+    let decrementButton = document.createElement('img');
+    decrementButton.classList.add('quantity-button');
+    decrementButton.src = 'assets/images/icon-decrement-quantity.svg';
+    decrementButton.addEventListener('click', function(){
+      decreaseDessertToCart(name);
+    });
+    addToCartContainer.appendChild(decrementButton);
+
+    let dessertQuantityDisplay  = document.createElement('span');
+    dessertQuantityDisplay.textContent = dessert.quantity;
+    addToCartContainer.appendChild(dessertQuantityDisplay);
+
+    let incrementButton = document.createElement('img');
+    incrementButton.classList.add('quantity-button');
+    incrementButton.src = 'assets/images/icon-increment-quantity.svg';
+    incrementButton.addEventListener('click', function(){
+      increaseDessertToCart(name);
+    });
+    addToCartContainer.appendChild(incrementButton);
+  }
+  
+  function findAddToCartContainer(name){
+    dessert = desserts.find(d => d.name === name)
+    return addToCartContainer = document.getElementById(`addToCart_Container_${dessert.name}`)
+  }
+
+
+  function removeItemFromCart(name){
+    item = cart.find(d => d.name === name);
+    item.quantity = 0;
+    cart = cart.filter(i => i.name !== name)
+
+    RenderAddToCardTransition(name);
+    processCartRendering();
+  }
+  function increaseDessertToCart(name){ 
+    item = cart.find(d => d.name == name);
+
+    if(item){
+      item.quantity++;
+    } else {
+      item = desserts.find(d => d.name == name);
+      cart.push(item);
+      item.quantity++;
+    }
+
+    RenderAddToCardTransition(name);
+    processCartRendering();
+  }
+  function decreaseDessertToCart(name){
+    item = cart.find(d => d.name === name);
+
+    if(item){
+      item.quantity--;
+
+      if(item.quantity < 1){
+        cart = cart.filter(i => i.name !== name)
+      }
+    }
+
+    RenderAddToCardTransition(name);
+    processCartRendering();
+  }
+
+  function getCurrentDeviceSize() {
+    const width = window.innerWidth;
+
+    if (width >= 1024) return 'desktop';
+    if (width >= 768) return 'tablet';
+    return 'mobile';
+  }
+
+  async function getDesserts(){
+    try {
+        const response = await fetch('data.json');
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+
+        const data = await response.json(); 
+        return data;
+    } catch (error) {
+      console.error('There was a problem with the fetch operation:', error);
+      throw error;
+    }
+  }
+</script>
+</html>

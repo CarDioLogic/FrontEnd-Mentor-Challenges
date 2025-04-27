@@ -223,5 +223,14 @@
         "dificulty": {
             "Junior": 2
         }
+    },
+    {
+        "title": "Products list with cart",
+        "imageSrc": "images/imgChallenges/product-list-with-cart-main.PNG",
+        "url": "Challenges/product-list-with-cart-main/",
+        "isVisible": true,
+        "dificulty": {
+            "Junior": 2
+        }
     }
 ]
