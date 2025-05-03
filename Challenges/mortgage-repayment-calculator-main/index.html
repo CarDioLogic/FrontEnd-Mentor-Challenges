@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <link rel="stylesheet" href="style.css">
+  <title>Frontend Mentor | Mortgage repayment calculator</title>
+</head>
+<body>
+  <form action="">
+    <div class="card">
+      <div class="card-body">
+        <div class="area calc-area">
+          <div class="area-title">
+            <h2>Mortgage Calculator</h2>
+            <button type="reset" class="link-style-btn">Clear All</button>
+          </div>
+          <div class="area-inputs">
+            <div class="input-group">
+              <label for="">Mortgage Amount</label>
+              <div class="input input-text">
+                <p>€</p>
+                <input min="0" max="1000000" name="mortageAmmount" required type="number">
+              </div>        
+            </div>
+            <div class="input-group">
+              <label for="">Mortgage Term</label>
+              <div class="input input-text">
+                <p>years</p>
+                <input min="1" max="60" name="mortageTerm" required type="number" class="first">
+              </div>
+            </div>
+            <div class="input-group">
+              <label for="">Interest Rate</label>
+              <div class="input input-text">
+                <p>%</p>
+                <input min="0" max="99" name="interestRate" required type="number" class="first">
+              </div>
+            </div>
+            <div class="input-group">
+              <label for="">Mortage Type</label>
+              <div class="input radio-mortageType">
+                <input required checked value="1" name="mortageType" class="" type="radio">
+                <label for="">Repayment</label>
+              </div>
+              <div class="input radio-mortageType">
+                <input required value="2" name="mortageType" class="" type="radio">
+                <label for="">Interest Only</label>
+              </div>
+            </div>
+          </div>
+         
+          <button type="submit" class="calculate-btn">
+            <img src="assets/images/icon-calculator.svg" alt="Calculator icon">
+            <span>Calculate Repayments</span>              
+          </button>
+        </div>
+        <div class="area results-empty text-center" id="results_default_area">
+            <img src="assets/images/illustration-empty.svg" alt="Illustration finances">
+            <h2>Results shown here</h2>
+            <p>Complete the form and click "Calculate repayments" to see what your monthly
+              payments would be
+            </p>
+        </div>
+        <div class="area results-area hidden" id="results_area">
+          <h2>Your results</h2>
+
+          <p>Your results are shown below based on the information you provided. 
+            To adjust the results, edit the form and click "calculate repayments" again.</p>
+
+            <div class="result-values">
+              <div>
+                <label>Your monthly payments</label>
+                <h1 class="lime-color">
+                  €
+                  <span id="calculated_monthly_mortage">1,797.94</span>    
+                </h1>
+              </div>
+              <hr class="divider">
+              <div>
+                <label>Total you'll repay over the term</label>
+                <h3>
+                  €
+                  <span id="calculated_total_mortage">1,797.94</span>  
+                </h3>
+              </div> 
+            </div>
+        </div>
+      </div>    
+    </div>
+  </form>
+</body>
+</html>
+
+<script>
+const resultsArea = document.getElementById('results_area');
+const resultsDefaultArea = document.getElementById('results_default_area');
+
+document.addEventListener('DOMContentLoaded', function(){
+  InitMortageTypeClickEvents();
+  initFormSubmissionEvent();
+});
+
+function InitMortageTypeClickEvents(){
+  const mortageTypeRadioDivInputs = document.querySelectorAll('.radio-mortageType');
+  mortageTypeRadioDivInputs.forEach(el => {
+    el.addEventListener('click', function(){
+      const radio = el.querySelector('input[type="radio"]');
+      if (radio) {
+        radio.click();
+      }
+    });
+  });
+}
+
+function initFormSubmissionEvent(){
+  document.querySelector('form').addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    const form = e.target;
+    const formData = new FormData(form);
+
+    const values = Object.fromEntries(formData.entries());
+    let results = calculateMortage(values);
+    renderMortageResults(results);
+  });
+
+  document.querySelector('form').addEventListener('reset', function (e) {
+    resultsDefaultArea.classList.remove('hidden');
+    resultsArea.classList.add('hidden');  
+  });
+}
+
+function renderMortageResults(results){
+  const monthly = document.getElementById('calculated_monthly_mortage');
+  const total =  document.getElementById('calculated_total_mortage');
+  
+  monthly.innerHTML = results.monthly;
+  total.innerHTML = results.total;
+}
+function calculateMortage(values) {
+  const interestRate = parseFloat(values.interestRate);
+  const mortgageAmount = parseFloat(values.mortageAmmount);
+  const mortgageTerm = parseInt(values.mortageTerm);
+  const mortgageType = parseInt(values.mortageType);
+  if (!interestRate || !mortgageAmount || !mortgageTerm) {
+    return { monthly: 0, total: 0 };
+  }
+  const monthlyRate = interestRate / 100 / 12;
+  const totalPayments = mortgageTerm * 12;
+
+  let monthlyPayment = 0;
+  let totalRepayment = 0;
+
+  if (mortgageType == 1) {
+    const numerator = monthlyRate * Math.pow(1 + monthlyRate, totalPayments);
+    const denominator = Math.pow(1 + monthlyRate, totalPayments) - 1;
+    monthlyPayment = mortgageAmount * (numerator / denominator);
+    totalRepayment = monthlyPayment * totalPayments;
+  } else {
+    monthlyPayment = mortgageAmount * monthlyRate;
+    totalRepayment = monthlyPayment * totalPayments; // only interest, principal stays
+  }
+
+  resultsDefaultArea.classList.add('hidden');
+  resultsArea.classList.remove('hidden');
+
+  return {
+    monthly: monthlyPayment.toFixed(2),
+    total: totalRepayment.toFixed(2)
+  };
+}
+
+</script>

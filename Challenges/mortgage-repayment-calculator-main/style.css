@@ -1,0 +1,323 @@
+
+:root {
+    --white: hsl(0, 0%, 100%);
+    --slate-100: hsl(202, 86%, 94%);
+    --slate-300: hsl(203, 41%, 72%);
+    --slate-500: hsl(200, 26%, 54%);
+    --slate-700: hsl(200, 24%, 40%);
+    --slate-900: hsl(202, 55%, 16%);
+    --slate-900-darker: hsl(201, 54%, 11%);
+    --Lime-darker: hsl(61, 56%, 41%);
+    --Lime: hsl(61, 70%, 52%);
+    --Lime-lighter: hsl(63, 54%, 93%); 
+    --Red: hsl(4, 69%, 50%);
+  }
+
+  @font-face {
+    font-family: "Plus Jakarta Sans";
+    font-weight: 400, 500;
+    src: url('assets/fonts/PlusJakartaSans-VariableFont_wght.ttf');
+  }
+
+  @font-face {
+    font-family: "Plus Jakarta Sans";
+    font-weight: 400, 500;
+    font-style: italic;
+    src: url('assets/fonts/PlusJakartaSans-Italic-VariableFont_wght.ttf');
+  }
+
+  @layer reset {
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+  
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    p,
+    ul,
+    ol,
+    figure,
+    body {
+      margin: 0;
+    }
+  
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      font-weight: 600;
+    }
+  
+    img {
+      max-width: 100%;
+      display: block;
+    }
+  }
+
+  @layer base{
+    html{
+        font-family: "Plus Jakarta Sans", sans-serif;
+        color: var(--slate-900);
+
+        @media (width > 650px) {
+            font-size: 10px;
+        }
+    }
+    body{
+        background-color: var(--slate-100);
+    }
+    label{
+        color:var(--slate-500);
+        font-weight: 500;
+    }
+    input[type='radio']:after {
+        width: 15px;
+        height: 15px;
+        border-radius: 15px;
+        top: 11px;
+        left: -1px;
+        position: relative;
+        background-color: var(--white);
+        content: '';
+        display: inline-block;
+        visibility: visible;
+        border: 1px solid var(--slate-700);
+
+        @media (width > 650px) {
+            top: 6px;
+        }
+    }
+    input[type='radio']:checked:after {
+        width: 15px;
+        height: 15px;
+        border-radius: 15px;
+        top: 11px;
+        left: -1px;
+        position: relative;
+        background-color: var(--Lime);
+        content: '';
+        display: inline-block;
+        visibility: visible;
+        border: 2px solid var(--Lime-lighter);
+        outline: 1px solid var(--Lime);
+        @media (width > 650px) {
+            top: 6px;
+        }
+    }
+
+    .card{ 
+        background-color: var(--white);
+        @media (width > 650px) {
+            margin: auto;
+            margin-top: 20px; /*no bueno this */
+            width: 60%;
+            border-radius: 20px;
+            overflow: clip;
+        }
+    }
+    .area-title{
+
+        @media(width >650px){
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+        }        
+    }
+    .card-body{
+        > .area {
+            padding: 20px;
+        }
+
+        @media (width > 650px) {
+            display: flex;
+        }
+    }    
+
+    .card-body>.calc-area{
+        display: grid;
+        gap:2rem;
+        box-sizing: border-box;
+        > .area-inputs{
+            box-sizing: border-box;
+            display: flex;
+            flex-wrap: wrap;
+            gap:1rem;
+            
+            > * {
+                width: 100%;
+            }
+
+            @media (width > 650px){
+                > :nth-child(2) {
+                    width: calc(50% - 0.5rem); 
+                }
+                > :nth-child(3) {
+                    width: calc(50% - 0.5rem); 
+                }
+            }
+        }
+    }
+
+    .input-group{
+        display: grid;
+        gap:10px;
+
+        @media (width > 650px){
+            gap:5px;
+        }
+    }
+    .input-group > .input{
+        display: flex;
+        border: solid 1px var(--slate-700);
+        border-radius: 5px;
+        overflow: clip;
+
+        > * {
+            padding: 10px;
+            order: 1;
+        }
+        > *.first {
+            order: -1;
+        }
+    }
+    .input.input-text{
+        width: 100%;
+        > p {
+            color: var(--slate-700);
+            background-color: var(--slate-100);
+            font-weight: bolder;
+        }
+        > input {
+            width: 100%;
+            flex:1;
+            border: none;
+            font-family: "Plus Jakarta Sans";
+            font-weight: bolder;
+            color: var(--slate-900);
+
+        }
+    }
+    .input>input[type=radio]{
+        margin-left: 10px;
+        cursor: pointer;
+    }
+    .input:has(input[type=radio]) {
+        cursor: pointer;
+
+        > * {
+            cursor: pointer;
+        }
+        > label {
+            font-weight: bolder;
+            color: var(--slate-900);
+        }
+    }
+    .input:has(input[type=radio]:checked) {
+        border: solid 1px var(--Lime);
+        background-color: var(--Lime-lighter);
+    }
+    .calculate-btn{
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 25px;
+        border: none;
+        background-color: var(--Lime);
+        padding-block: 15px;
+        gap:10px;
+
+        > span {
+            font-family: "Plus Jakarta Sans";
+            color: var(--slate-900);
+            font-weight: bolder;
+            font-size: 1rem;
+        }
+
+        @media (width > 650px){
+            width: 70%;
+            padding-block: 5px;
+        }
+    }
+    .calculate-btn:hover{
+        background-color: var(--Lime-darker);
+    }
+    .link-style-btn{
+        cursor: pointer;
+        text-decoration: underline;
+        color: var(--slate-500);
+        background-color: transparent;
+        border: none;
+    }
+    .link-style-btn:hover{
+        color: var(--slate-700);
+    }
+
+    .results-area, 
+    .results-empty{
+        background-color: var(--slate-900);
+        color: var(--white);
+        display:flex;
+        flex-direction: column;
+        justify-content: var(--results-area-jus-content, start);
+        text-align: var(--results-area-text-align, start);
+        gap:15px;
+
+        > p {
+            font-size: 0.9rem;
+            color: var(--slate-500)
+        }
+
+        > img{
+            margin-inline: auto;
+            width: 150px;
+        }
+
+        @media (width > 650px) {
+            border-bottom-left-radius: 20px;
+        }
+    }
+
+    .results-empty{
+        --results-area-jus-content: center;
+        --results-area-text-align: center;
+    }
+
+    .results-area > .result-values{
+        background-color: var(--slate-900-darker);
+        padding: 20px;
+        border-radius: 10px;
+        border-top: solid 4px var(--Lime);
+        display: grid;
+        gap:15px;
+
+        > div {
+            display: grid;
+            gap:5px;
+        }
+    }
+    .divider{
+        border: none;
+        height: 1px;
+        background-color: var(--slate-700);
+        margin: 0;
+    }
+  }
+
+  @layer utilities{
+    .lime-color{
+        color:var(--Lime);
+    }
+    .hidden{
+        display: none;
+    }
+  }

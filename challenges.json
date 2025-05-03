@@ -232,5 +232,16 @@
         "dificulty": {
             "Junior": 2
         }
+    },
+    {
+        "title": "Mortage repayment calculator main",
+        "imageSrc": "images/imgChallenges/mortage-repayment-calculator-main.PNG",
+        "url": "Challenges/mortgage-repayment-calculator-main/",
+        "isVisible": true,
+        "dificulty": {
+            "Junior": 2
+        }
     }
 ]
+
+
