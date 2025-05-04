@@ -13,6 +13,33 @@
     --Red: hsl(4, 69%, 50%);
   }
 
+  /* improve input groups
+  .test-input{
+    display: flex;
+    width: 500px;
+    margin: 5rem auto;
+    background-color: var(--slate-100);
+    border:solid 1px var(--slate-700);
+    border-radius: 5px;
+    overflow: clip;
+
+    > *{
+        order:1;
+    }
+    > .first {
+        order:-1;
+    }
+    > p {
+        padding: 1rem;
+        color: var(--slate-900)
+    }
+    > input {
+        padding:1rem;
+        width: 100%;
+        border: none;
+    }
+  } */
+
   @font-face {
     font-family: "Plus Jakarta Sans";
     font-weight: 400, 500;

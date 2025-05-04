@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <link rel="stylesheet" href="style.css">
+  <title>Frontend Mentor | Contact form</title>
+
+<body>
+  <form action="" id="contact_form" class="contact-form">
+    <h2>Contact Us</h2>
+
+    <div class="inputs-container">
+      <div class="input-group mandatory w50">
+        <label for="firstName">First Name</label>
+        <input type="text" name="firstName">
+        <p class="error hidden" data-for="firstName">This field is required</p>
+      </div>
+  
+      <div class="input-group mandatory w50">
+        <label for="lastName">Last Name</label>
+        <input type="text" name="lastName">
+        <p class="error hidden" data-for="lastName">This field is required</p>
+      </div>
+      
+      <div class="input-group mandatory">
+        <label for="email">Email Address</label>
+        <input type="email" name="email">
+        <p class="error hidden" data-for="email">This field is required</p>
+      </div>
+  
+      <div class="input-group mandatory flex-wrap">
+        <label for="queryType">Query Type</label>
+        
+        <div>
+          <div class="radio-input w50">
+            <input checked type="radio" name="queryType">
+            <span>General Enquiry</span>
+          </div>
+          <div class="radio-input w50">
+              <input type="radio" name="queryType">
+              <span>Support Request</span>
+          </div>
+        </div>
+
+        <p class="error hidden" data-for="queryType">Please select a query type</p>
+      </div>
+  
+      <div class="input-group mandatory">
+        <label for="message">Message</label>
+        <textarea name="message" id=""></textarea>
+        <p class="error hidden" data-for="message">This field is required</p>
+      </div>
+    </div>
+
+    <div class="checkbox-input">
+      <input type="checkbox" name="isConsented">
+      <span>I consent to being contacted by the team</span>
+    </div>
+    <button type="submit" class="btn-submit">Submit</button>
+
+  </form>
+
+
+  <div class="success-card" id="success_card">
+    <div class="success-card-title">
+      <img src="assets/images/icon-success-check.svg" alt="Success icon">
+      <h4>Message Sent</h4>
+    </div>
+    <p>Thanks for completing the form. We'll be in touch soon!</p>
+  </div>
+<!-- 
+  To submit this form, please consent to being contacted
+
+
+  Message Sent!
+  Thanks for completing the form. We'll be in touch soon! -->
+  
+</body>
+</html>
+
+<script>
+  const form = document.getElementById('contact_form');
+
+  document.addEventListener('DOMContentLoaded', function(){
+    initRadioInputGroupEvents();
+    initCheckboxInputGroupEvents();
+    initFormEvent();
+  });
+
+  function initFormEvent(){
+    form.addEventListener('submit', function(e){
+      e.preventDefault();
+      //validate
+      if(validateForm()){
+        toggleSuccesCard();
+      }
+    });
+  }
+
+  function toggleSuccesCard(){
+    let successCard = document.getElementById('success_card');
+    successCard.classList.add('show');
+
+    successCard.addEventListener('click', function(){
+      successCard.classList.remove('show');
+    })
+
+    setTimeout(() => {
+        successCard.classList.remove('show');
+    }, 2000); 
+  }
+
+  function initRadioInputGroupEvents(){
+    let radioInputs = document.querySelectorAll('.radio-input');
+    radioInputs.forEach(ri => {
+      ri.addEventListener('click', function(){
+        let radio = ri.querySelector('input[type=radio]');
+        radio.click();
+
+      });
+    });
+  }
+
+  function initCheckboxInputGroupEvents(){
+    let checkboxInputs = document.querySelectorAll('.checkbox-input');
+    checkboxInputs.forEach(ckbx => {
+      ckbx.addEventListener('click', function(){
+        let checkbox = ckbx.querySelector('input[type=checkbox]');
+        checkbox.click();
+      });
+    });
+  }
+
+  function validateForm(){
+    let isValid = true;
+
+    const formData = new FormData(form);
+    const values = Object.fromEntries(formData.entries());
+    for (const [key, value] of formData.entries()) {
+      let errorElement = document.querySelector(`p.error[data-for="${key}"]`);
+
+      if(!value){
+        errorElement.classList.remove('hidden');
+        isValid = false;     
+      } else{
+        errorElement.classList.add('hidden');
+      }
+    }
+    return isValid;
+  }
+
+</script>

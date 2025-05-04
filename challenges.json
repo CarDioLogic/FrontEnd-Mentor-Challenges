@@ -241,6 +241,15 @@
         "dificulty": {
             "Junior": 2
         }
+    },
+    {
+        "title": "Contact form",
+        "imageSrc": "images/imgChallenges/contact-form.PNG",
+        "url": "Challenges/contact-form-main/",
+        "isVisible": true,
+        "dificulty": {
+            "Junior": 2
+        }
     }
 ]
 
