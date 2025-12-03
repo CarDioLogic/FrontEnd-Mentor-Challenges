@@ -1,5 +1,14 @@
 [
     {
+        "title": "Weather app",
+        "imageSrc": "images/imgChallenges/weather-app.PNG",
+        "url": "Challenges/weather-app-main/index.html",
+        "isVisible": true,
+        "dificulty": {
+            "Junior": 2
+        }
+    },
+    {
         "title": "Age calculator app",
         "imageSrc": "images/imgChallenges/age calculator app img.PNG",
         "url": "Challenges/Age calculator app/index.html",
