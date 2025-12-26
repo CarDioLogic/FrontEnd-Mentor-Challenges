@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <title>Frontend Mentor | Todo app</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="" id="body">
+  <header>
+    <h1>TODO</h1>
+    <button class="theme-btn" id="theme-btn">
+    </button>
+  </header>
+  <main>
+    <section class="container">
+      <div class="container-row">
+        <div class="checkbox-container" id="create-todo-btn"></div>
+        <input class="create-todo" id="create-todo-description" type="text" placeholder="Create a new todo...">
+      </div>
+    </section>
+    <section class="container" id="todos-container">
+      <div class="todos-list" id="todo-list"> 
+        <div class="container-row todo-item completed" data-rowId="1" data-completed="true">
+          <div class="checkbox-container"></div>          
+          <input type="text" for="Description" value="Complete online js course"/>
+          <div class="delete-btn" id="delete-btn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18"><path fill="#494C6B" fill-rule="evenodd" d="M16.97 0l.708.707L9.546 8.84l8.132 8.132-.707.707-8.132-8.132-8.132 8.132L0 16.97l8.132-8.132L0 .707.707 0 8.84 8.132 16.971 0z"/></svg>
+          </div>          
+        </div>
+        <div class="container-row todo-item" data-rowId="2" data-completed="false">
+          <div class="checkbox-container"></div>          
+          <input type="text" for="Description" value="Jog around park 3x"/>
+          <div class="delete-btn" id="delete-btn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18"><path fill="#494C6B" fill-rule="evenodd" d="M16.97 0l.708.707L9.546 8.84l8.132 8.132-.707.707-8.132-8.132-8.132 8.132L0 16.97l8.132-8.132L0 .707.707 0 8.84 8.132 16.971 0z"/></svg>          </div>          
+          </div>
+        </div>
+      </div>
+      <div class="todos-details container-row" id="todos-details">
+        <div>
+          <span><span id="todos-counter">5</span> items left</span>
+        </div>
+        <search class="todos-filter filter_desktop">
+          <button class="active all-filter-btn" id="all-filter-btn">All</button>
+          <button class="active-filter-btn" id="active-filter-btn">Active</button>
+          <button class="completed-filter-btn" id="completed-filter-btn">Complete</button>
+        </search>
+        <div>
+          <button id="clear-all-todos">Clear completed</button>          
+        </div>
+      </div>
+    </section> 
+    <div class="container">
+      <div class="todos-details container-row" id="todos-details">
+        <search class="todos-filter filter_mobile">
+          <button class="active all-filter-btn" id="all-filter-btn">All</button>
+          <button class="active-filter-btn" id="active-filter-btn">Active</button>
+          <button class="completed-filter-btn" id="completed-filter-btn">Complete</button>
+        </search>
+      </div>
+    </div>
+  </main>
+</body>
+</html>
+
+<script type="module" src="dist/script.js"></script>

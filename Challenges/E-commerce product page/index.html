@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="style.css">
+  <title>Frontend Mentor | E-commerce product page</title>
+</head>
+<body>
+    <div class="backdrop">
+    </div>
+    <header>
+      <nav>
+        <section class="nav-left">
+          <div class="menu-icon" id="menu-icon_open">
+            <img src="images/icon-menu.svg" alt="menu-icon-open">
+          </div>
+          <div class="menu-icon hidden" id="menu-icon_close">
+            <img src="images/icon-close.svg" alt="menu-icon-close">
+          </div>
+          <div class="logo-container" onclick="reloadPage()">
+              <img class="logo" src="images/logo.svg" alt="logo">
+          </div>
+            <div class="nav-links closed" id="nav-links">
+              <a class="nav-link">Collections</a>
+              <a class="nav-link">Men</a>
+              <a class="nav-link">Women</a>
+              <a class="nav-link">About</a>
+              <a class="nav-link">Contact</a>
+            </div>
+        </section>
+        <section class="nav-right">
+            <div class="cart-container" id="cart-container">
+              <div class="cart-icon">
+                <img class="black" src="images/icon-cart.svg" alt="cart-icon"  id="cart-icon">
+                <span class="cart-badge hidden" id="cart-badge"></span>
+              </div>              
+              <div class="cart hidden" id="cart">
+                <div class="cart-header">
+                    <h4>Cart</h4>
+                </div>
+                <div class="cart-body">
+                  <p class="cart-empty" id="cart-empty">Your cart is empty.</p>
+                  <div class="cart-content hidden" id="cart-content">
+                    <div class="cart-items" id="cart-items">
+
+                    </div>
+                    <button class="main-btn" onclick="reloadPage()">
+                        Checkout
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="user-profile-container">
+              <img src="images/image-avatar.png" alt="user-avatar">
+            </div>
+        </section>
+      </nav>
+    </header>
+    <div class="lightbox closed" id="lightbox">
+      <div class="close-container">
+        <svg class="close-icon" id="close-lightbox" width="14" height="15" xmlns="http://www.w3.org/2000/svg">
+          <path d="m11.596.782 2.122 2.122L9.12 7.499l4.597 4.597-2.122 2.122L7 9.62l-4.595 4.597-2.122-2.122L4.878 7.5.282 2.904 2.404.782l4.595 4.596L11.596.782Z" 
+          fill="#69707D"/>
+        </svg> 
+     </div>
+      <div class="product-active">
+        <div class="previous-arrow" id="lightbox-previous-arrow">
+          <img src="images/icon-previous.svg" alt="previous-icon">
+        </div>
+        <div class="next-arrow">
+          <img src="images/icon-next.svg" alt="next-icon" id="lightbox-next-arrow">
+        </div>
+        <img class="product-image" id="lightbox-main-display-image" src="images/image-product-1.jpg" alt="product-image">
+      </div>
+      <div class="products-thumbnails" id="lightbox-products-thumbnails">              
+      </div>
+    </div>
+    <main>
+      <div class="products-gallery-container">
+        <div class="product-active" id="product-active">
+            <img class="product-image" id="main-display-image" src="images/image-product-1.jpg" alt="product-image">
+        </div>
+        <div class="products-thumbnails" id="products-thumbnails">              
+        </div>
+      </div>
+      <article class="product-information">
+        <div class="product-titles-container">
+          <h5 class="product-brand-title" id="brand-title">SNEAKER COMPANY</h3>
+          <h1 class="product-title" id="product-title">Fall Limited Edition Sneakers</h1>
+        </div>
+        <div class="product-description" id="product-description">
+          <p> These low-profile sneakers are your perfect casual wear companion. Featuring a 
+  durable rubber outer sole, they’ll withstand everything the weather can offer.</p>
+        </div>
+        <div class="product-price">
+          <div class="current hidden" id="discount-container">
+            <span class="current-price" id="discount-price">$125.00</span>
+            <span class="discount" id="discount">50%</span>
+          </div>
+          <div class="former">
+            <span class="former-price" id="full-price">$250.00</span>
+          </div>
+        </div>
+        <div class="product-actions">
+          <div class="quantity-selector">
+            <div class="decrement quantity-selector-btn" id="decrement">
+              <img src="images/icon-minus.svg" alt="minus-icon">
+            </div>
+            <div class="quantity" id="quantity">0</div>
+            <div class="increment quantity-selector-btn">
+              <img src="images/icon-plus.svg" alt="plus-icon" id="increment">
+            </div>
+          </div>
+          <button class="main-btn" id="add-to-cart-btn">
+            <img class="filter-black" src="images/icon-cart.svg" alt="cart-icon">
+            <span>Add to cart</span>
+          </button>
+        </div>
+      </article>
+    </main>
+</body>
+</html>
+
+<script src="script.js"></script>

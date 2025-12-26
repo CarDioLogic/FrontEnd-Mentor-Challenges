@@ -1,0 +1,16 @@
+{
+  "name": "jobs-listings-with-filtering",
+  "version": "1.0.0",
+  "description": "![Design preview for the Job listings with filtering coding challenge](preview.jpg)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "typescript": "^5.9.3"
+  }
+}

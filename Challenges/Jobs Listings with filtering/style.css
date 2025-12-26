@@ -1,0 +1,310 @@
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
+@layer reset{
+    *,
+    *::before,
+    *::after{
+        box-sizing: border-box;
+    }
+
+    body,
+    p,
+    span,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6{
+        margin: 0;
+    }
+
+    /* the font requires this visual adjustment */
+    p,
+    span,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6{
+        --LeagueSpartanFontCorrection: 3px;
+        margin-top: var(--LeagueSpartanFontCorrection);
+    }
+
+    img {
+        max-width: 100%;
+    }
+}
+
+@layer base{
+    :root{
+        --Green400: hsl(180, 29%, 50%);
+        --Green50: hsl(180, 52%, 96%);
+        --Gray200: hsl(180, 8%, 80%);
+        --Gray400: hsl(180, 8%, 52%);
+        --Green900: hsl(180, 14%, 20%);
+        --white: white;
+
+        --jobImageHeight: clamp(30px, 20vw, 60px);
+        --jobItemPadding: 2rem;
+    }
+
+    body {
+        font-family: "League Spartan", sans-serif;        
+        font-optical-sizing: auto;
+        font-weight: 500;
+        font-style: normal;
+        min-height: 100dvh;
+        background-color:var(--Green50);
+
+        container-type: inline-size; 
+        --font-size-xs: clamp(0.6rem, 0.9cqw, 0.9rem);
+        --font-size-sm: clamp(0.7rem, 1.1cqw, 1.1rem);
+        --font-size-md: clamp(1.1rem, 2cqw, 2.5rem); 
+        --font-size-lg: clamp(1.2rem, 1.5cqw, 1.5rem); 
+    }
+
+    section:has(.filter-container){
+        min-height: 100px;
+        background: no-repeat url('images/bg-header-desktop.svg') center;
+        background-size: cover;
+        background-color: var(--Green400);
+        display: flex;
+        justify-content: center;
+        align-items: end;
+    }
+    .filter-container,
+    .jobs-container {
+        width: 80vw;
+    }
+    .filter-container,
+    .job-item{
+        position: relative;
+        border-radius: 0.2rem;
+        background-color: var(--white);
+        -webkit-box-shadow: 0px 5px 10px -5px var(--Green400); 
+        box-shadow: 0px 5px 10px -5px var(--Green400);
+    }
+
+    body.filter-visible .filter-container{
+        display: flex;
+    }
+
+    .filter-container{
+        display: none;
+        gap: 0.5rem;
+        align-items: center;
+        padding-block: 1rem;
+        padding-inline: 2rem;
+        margin-bottom: -25px;
+    }
+    .filters-options-container{
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+    }
+    .clear-filter-btn{
+        all:unset;
+        margin-left: auto;        
+        color: var(--Green400);
+        font-size: var(--font-size-xs);
+        cursor: pointer;
+    }
+    .clear-filter-btn:active{
+        text-decoration: underline;
+    }
+    .filter-option{
+        display: flex;
+        align-items: center;
+        background-color: var(--Green50);
+        color: var(--Green400);
+        font-size: var(--font-size-xs);
+        border-radius: 0.2rem;
+        font-weight: bold;
+        overflow: hidden;
+    }
+
+    .filter-option span{
+        margin-inline: 0.5rem;
+    }
+
+    .clear-option-btn{
+        all: unset;
+        padding: 5px;
+        background-color: var(--Green400);    
+        cursor: pointer;    
+        height: 100%;
+        aspect-ratio: 1 / 1;
+    }
+    .clear-option-btn img{
+        margin-top: 2px;
+        width: 8px;
+    }
+    .clear-option-btn:active{
+        background-color: var(--Green900);
+    }
+
+    body.filter-visible .jobs-container{
+        margin-block: 3rem;
+    }
+    .jobs-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-inline: auto;
+        gap:1rem;
+        margin-block: 1rem;
+        height: 500px;
+    }
+
+    .job-item{
+        display: flex;
+        align-items: center;
+        gap:1.5rem;
+        padding: var(--jobItemPadding);
+        width: 100%;
+    }
+    .job-image{
+        width: var(--jobImageHeight);
+    }
+    .job-item.featured {
+        border-left: 4px solid var(--Green400) ;
+    }
+    .job-title{
+        font-size: var(--font-size-md);
+        cursor: pointer;
+    }
+    .job-title:active{
+        color:var(--Green400)
+    }
+    .job-details-container{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 100%;
+    }
+    .job-details-container .header,
+    .job-details-container .header > .badges
+    {
+        display: flex;
+        align-items: center;
+    }
+    .job-details-container .header {
+        gap:1rem;
+    }
+    .job-details-container .header > .badges
+    {
+        gap: 0.5rem;
+    }
+    .job-details-container .header > span {
+        color: var(--Green400);
+        font-size: var(--font-size-sm);
+        font-weight: 600;
+        margin-top: 0;
+    }
+
+    .job-details-container .header > .badges div {
+        display: flex;
+        padding: 0.4rem;
+        padding-block:0.1rem;
+        border-radius: 0.8rem;
+        color: var(--white);
+        font-size: var(--font-size-xs);
+    }
+
+    .job-details-container .header > .badges .new {
+        background-color: var(--Green400);
+    }
+    .job-details-container .header > .badges .featured {
+        background-color: var(--Green900);
+    }
+
+    .job-info {
+        display: flex;
+        justify-content: space-between;
+        gap: 0.5rem;
+        font-size: var(--font-size-sm);
+    }
+    .job-info span{
+        color: var(--Gray400);
+        position: relative;
+    }
+
+    .tags-container{
+        margin-left: auto;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: end;
+        gap: 0.8rem;
+    }
+
+    .tags-container .tag-item {
+        padding: 0.4rem;
+        color: var(--Green400);
+        background-color: var(--Green50);
+        border-radius: 0.2rem;
+        cursor: pointer;
+        font-size: var(--font-size-xs);
+        font-weight: bold;
+    }
+
+    .tags-container .tag-item:active{
+        background-color: var(--Green400);
+        color: var(--Green50);
+    }
+
+    @media (max-width: 550px){
+        :root{
+            --jobItemPadding: 0.8rem;
+            --jobImageHeight: clamp(30px, 13vw, 40px);
+        }
+        .job-image{
+            position: absolute;
+            top: 0;
+            left: var(--jobItemPadding);
+            transform: translate(0%, -50%);
+        }
+        .jobs-container,
+        .filter-container{
+            width: 85vw;
+        }
+        .job-item{
+            --jobItemGap: 1.2rem;
+            margin-top: calc(var(--jobImageHeight) / 2);
+            padding-top: calc((var(--jobImageHeight) + var(--jobItemPadding)) / 2);
+            flex-direction: column;
+            align-items: start;
+            gap: var(--jobItemGap);
+        }
+        .job-details-container{
+            gap: calc(var(--jobItemGap) / 2);
+        }
+        .job-title{
+            font-size: var(--font-size-sm);
+        }
+        .jobs-info{
+            font-size: var(--font-size-xs);
+        }
+        .tags-container{
+            gap: 0.5rem;
+            margin-left: 0;
+            justify-content: start;
+            position: relative;
+            width: 100%;
+        }
+        .tags-container::before{
+            position: absolute;
+            content: "";
+            width: 100%;
+            height: 1px;
+            background-color: var(--Gray200);
+            top: 0;
+            transform: translateY(calc(-1 * var(--jobItemGap) / 2));
+
+        }
+        .filter-container{
+            padding: var(--jobItemPadding);
+        }
+    }
+}

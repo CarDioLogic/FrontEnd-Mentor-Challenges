@@ -18,33 +18,36 @@ p {
 
 body {
   color: var(--color5);
-  margin: 0;
   font-family: sans-serif;
   margin: 0 auto;
   background-color: var(--color1);
+  padding-block:2rem;
 }
 
 main {
   margin-top: 1em;
+  padding-inline: 2em;
 }
 img {
   max-width: 100%;
 }
-
 a:hover{
   color: var(--color5);
 }
 a:active {
   color: var(--color4);
 }
-.container {
-  padding-inline: 7em;
-  padding-block: 0.5em;
-}
-.challengeImg {
+.challenge-img {
   aspect-ratio: 1.7;
 }
-.titleContainer {
+.hero-section {
+  display: grid;
+  gap:1em;
+  place-items: center;
+  margin-bottom: 4em;
+}
+
+.title-container {
   text-align: center;
   color: var(--color2);
 }
@@ -55,44 +58,41 @@ a:active {
 .subtitle{
   color: var(--color5);
 }
-.row {
-  display: flex;
-  align-items: center;
-}
-.justify-center{
-  justify-content: center;
-}
-.descriptionTxt {
+
+.description-txt {
   font-size: 1.3em;
   color: var(--color2);
-  max-width: 600px;
+  max-width: 70vw;
+  text-align: center;
 }
 
-.challengesSection {
+.challenges-section {
   margin-top: 1em;
 }
 .challengesSection-title{
   text-align: center;
 }
 
-.challengesContainer {
+.challenges-container {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
   gap: 2em;
   margin-top: 1em;
+  max-width: 1400px;
+  margin-inline:auto;
 }
 
 .challenge {
   background-color: var(--color1);
   border-radius: 1em;
   padding: 1em;
-  width: 40%;
+  width: calc(50% - 4em);
   position: relative;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   cursor: pointer;
 
-  .imgContainer{
+  .img-container{
     overflow: hidden;
     border-radius: 1em;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -121,12 +121,6 @@ a:active {
 }
 
 @media (max-width: 600px) {
-  .container {
-    margin-inline: 1em;
-    margin-block: 0.5em;
-    padding-inline: 1em;
-    padding-block: 0.5em;
-  }
   .row {
     flex-direction: column;
   }
@@ -135,14 +129,14 @@ a:active {
     height: 10em;
     margin: 0em auto;
   }
-  .descriptionImage {
+  .description-image {
     order: 0;
   }
-  .descriptionContainer {
+  .description-container {
     order: 1;
     margin-block: 1em;
   }
   .challenge {
-    width: 80%;
+    width: 90%;
   }
 }

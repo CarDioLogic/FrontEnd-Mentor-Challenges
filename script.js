@@ -2,7 +2,7 @@
     fetch('challenges.json')
       .then(response => response.json())
       .then(challenges => {
-        const challengesContainer = document.querySelector('.challengesContainer');
+        const challengesContainer = document.querySelector('.challenges-container');
         
         challenges.forEach(challenge => {
           if(challenge.isVisible === true){
@@ -15,14 +15,14 @@
           challengeDiv.title = "Use browser's back button to return to this page!"
           
           const imgContainer = document.createElement('div');
-          imgContainer.classList.add('imgContainer');
+          imgContainer.classList.add('img-container');
 
           challengeDiv.addEventListener('click', function(){
             window.location.href = challenge.url;
           });
           
           const img = document.createElement('img');
-          img.classList.add('challengeImg');
+          img.classList.add('challenge-img');
           img.src = challenge.imageSrc;
           img.alt = challenge.title;
           

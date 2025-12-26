@@ -1,5 +1,68 @@
 [
     {
+        "title": "E-commerce product page",
+        "imageSrc": "images/imgChallenges/e-commerce-product-page.PNG",
+        "url": "Challenges/E-commerce product page/index.html",
+        "isVisible": true,
+        "dificulty": {
+            "Intermediate": 3
+    }
+    },
+    {
+        "title": "Launch countdown timer",
+        "imageSrc": "images/imgChallenges/launch-countdown-timer.PNG",
+        "url": "Challenges/Launch countdown timer/index.html",
+        "isVisible": true,
+        "dificulty": {
+            "Intermediate": 3
+    }
+    },
+    {
+        "title": "Todo App",
+        "imageSrc": "images/imgChallenges/todo-app.PNG",
+        "url": "Challenges/Todo App/index.html",
+        "isVisible": true,
+        "dificulty": {
+            "Intermediate": 3
+    }
+    },
+    {
+        "title": "Ip Address Tracker",
+        "imageSrc": "images/imgChallenges/ip-address-tracker.PNG",
+        "url": "Challenges/IP address Tracker/index.html",
+        "isVisible": true,
+        "dificulty": {
+            "Intermediate": 3
+        }
+    },
+    {
+        "title": "Room homepage",
+        "imageSrc": "images/imgChallenges/room-homepage.PNG",
+        "url": "Challenges/Room homepage/index.html",
+        "isVisible": true,
+        "dificulty": {
+            "Intermediate": 3
+        }
+    },
+    {
+        "title": "Chat app CSS illustration",
+        "imageSrc": "images/imgChallenges/chat-app.PNG",
+        "url": "Challenges/Chat app/index.html",
+        "isVisible": true,
+        "dificulty": {
+            "Intermediate": 3
+        }
+    },
+    {
+        "title": "Jobs Listings with filtering",
+        "imageSrc": "images/imgChallenges/jobsListingsWithFiltering.PNG",
+        "url": "Challenges/Jobs Listings with filtering/index.html",
+        "isVisible": true,
+        "dificulty": {
+            "Intermediate": 3
+        }
+    },
+    {
         "title": "Weather app",
         "imageSrc": "images/imgChallenges/weather-app.PNG",
         "url": "Challenges/weather-app-main/index.html",
