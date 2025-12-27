@@ -20,7 +20,7 @@
     {
         "title": "Todo App",
         "imageSrc": "images/imgChallenges/todo-app.PNG",
-        "url": "Challenges/Todo App/index.html",
+        "url": "Challenges/Todo app/index.html",
         "isVisible": true,
         "dificulty": {
             "Intermediate": 3
