@@ -188,7 +188,7 @@ main{
         grid-template-rows: auto 1fr; 
         flex: 1;
 
-        @media(max-width:450px){
+        @media(max-width:700px){
             overflow: visible !important;
         }
     }
@@ -218,7 +218,7 @@ main{
         justify-content: center;
         gap:0.5rem;
 
-        @media(max-width: 450px){
+        @media(max-width: 700px){
             flex-direction: column;
         }
     }
@@ -229,7 +229,7 @@ main{
     }
 
     #search-location-btn{
-        @media(max-width:450px){
+        @media(max-width:700px){
             justify-content: center;
         }
     }
@@ -238,7 +238,7 @@ main{
     .location-search-container #search-location-btn{
         height: 50px;
 
-        @media(max-width: 450px){
+        @media(max-width: 700px){
             width: 100%;
         }
     }
@@ -276,7 +276,7 @@ main{
             "daily_forecast daily_forecast hourly_forecast"; 
         gap: var(--grid-forecast-card-gap);
 
-        @media(max-width:450px){
+        @media(max-width:700px){
             display: flex;
             flex-direction: column;
         }
@@ -298,8 +298,12 @@ main{
         background: url('assets/images/bg-today-large.svg') no-repeat center center;
         background-size: cover;
         display: flex;      
+        container-type: inline-size;
+        --fontSizeCurrentLocation: 4cqw;
+        --fontSizeCurrentDate: 2cqw;
+        --fontSizeCurrentForecast: 7cqw;
         
-        @media(max-width: 450px){
+        @media(max-width: 700px){
             order:1;
         }   
     }
@@ -309,7 +313,7 @@ main{
         align-items: center;   
         flex: 1;    
 
-        @media(max-width: 450px){
+        @media(max-width: 700px){
             padding-block:1.5rem;
             gap:1.5rem;
             flex-direction: column;
@@ -320,7 +324,7 @@ main{
         gap: 0.5rem;
         text-align: start;
 
-        @media (max-width:450px){
+        @media (max-width:700px){
             width: 100%;
             text-align: center;
         }
@@ -330,7 +334,7 @@ main{
         align-items: center;
         gap:0.5rem;
 
-        @media (max-width:450px){
+        @media (max-width:700px){
             width: 100%;
            justify-content: space-around;
         }
@@ -339,15 +343,19 @@ main{
         width: clamp(100px, 6vw, 200px);
     }
     .forecast-section_current-forecast .title{
-        font-size: clamp(3.5rem, 3vw, 4.5rem);
+        font-size: var(--fontSizeCurrentForecast);
         font-style: italic;
+
+        @media (max-width:700px){
+            font-size: 4.5rem;
+        }
     }
     
     .hourly_forecast { 
         grid-area: hourly_forecast; 
         position: relative;
 
-        @media(max-width:450px){
+        @media(max-width:700px){
             order:4;
             max-height: 60vh;
         }
@@ -359,7 +367,7 @@ main{
     }
     .current_forecast_details { 
         grid-area: current_forecast_details; 
-        @media(max-width:450px){
+        @media(max-width:700px){
             order:2;
         }
     }
@@ -369,13 +377,17 @@ main{
         gap: 1.1rem;
         height: 100%;
 
-        @media(max-width:450px){
+        @media(max-width:700px){
             grid-template-columns: repeat(2, 1fr);
             gap: 0.6rem;
         }
     }
     .current_forecast_details .item-content > span{
         font-size: 1.5rem;
+
+        @media(max-width:700px){
+            font-size: 2rem;
+        }
     }
 
     .current_forecast.loading,
@@ -444,7 +456,7 @@ main{
         gap: 1rem;
         margin-top: 1rem;
 
-        @media(max-width:450px){
+        @media(max-width:700px){
             order:3;
         }
     }
@@ -457,7 +469,7 @@ main{
         gap:0.6rem;
         height: 100%;
 
-        @media(max-width:450px){
+        @media(max-width:700px){
             grid-template-columns: repeat(3, 1fr);
         }
     }
@@ -485,13 +497,21 @@ main{
     .hourly_forecast .header > span,
     .current_forecast #current_date,
     .hour_icon > h5, .hour_icon > span {
-        font-size: clamp(1rem, 1.2vw, 1.4rem);
+        font-size:var(--fontSizeCurrentDate);
+
+        @media (max-width:700px){
+            font-size: 1.2rem;
+        }
     }
 
     .daily_forecast .forecast-card > .title,
     .daily_forecast .temperature-range-container span {
           font-size: clamp(0.8rem, 1vw, 1rem);
           text-align: center;
+
+        @media (max-width:700px){
+            font-size: 1rem;
+        }
     }
     #switch_to_imperial_container {
         cursor:pointer;
@@ -573,7 +593,11 @@ main{
         gap:1.5rem;
     }
     .current_forecast #current_location{
-        font-size: clamp(2rem, 2vw, 2.2rem);
+        font-size: var(--fontSizeCurrentLocation);
+
+        @media (max-width:700px){
+            font-size: 2rem;
+        }
     }
 
     .loading-shimmer,
